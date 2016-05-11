@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Charcoal-ui by locomotivemtl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Charcoal-ui</h1>
+      <h2 class="project-tagline">Ui tools (Dashboard, Layout, Form and Menu)</h2>
+      <a href="https://github.com/locomotivemtl/charcoal-ui" class="btn">View on GitHub</a>
+      <a href="https://github.com/locomotivemtl/charcoal-ui/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/locomotivemtl/charcoal-ui/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="charcoal-ui" class="anchor" href="#charcoal-ui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Charcoal UI</h1>
+
+<p>The <code>Charcoal\Ui</code> module provides tools to create UI elements (dashboards, layouts, forms and menus) from simple metadata / config.</p>
+
+<h1>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h1>
+
+<ul>
+<li>
+<a href="#how-to-install">How to install</a>
+
+<ul>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li><a href="#base-ui-item">Base UI Item</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#form">Form</a></li>
+<li><a href="#form-group">Form Group</a></li>
+<li><a href="#form-input">Form Input</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#menu-item">Menu Item</a></li>
+<li><a href="#service-provider">Service Providers</a></li>
+<li>
+<a href="#development">Development</a>
+
+<ul>
+<li><a href="#development-dependencies">Development dependencies</a></li>
+<li><a href="#coding-style">Coding Style</a></li>
+<li><a href="#authors">Authors</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to install</h1>
+
+<p>The preferred (and only supported) way of installing charcoal-view is with <strong>composer</strong>:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ composer require locomotivemtl/charcoal-view</pre></div>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>
+<code>PHP 5.5+</code>
+
+<ul>
+<li>Older versions of PHP are deprecated, therefore not supported.</li>
+</ul>
+</li>
+<li>
+<a href="http://www.php-fig.org/psr/psr-3/"><code>psr/log</code></a>
+
+<ul>
+<li>A PSR-3 compliant logger should be provided to the various services / classes.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/locomotivemtl/charcoal-config"><code>locomotivemtl/charcoal-config</code></a> 0.5+
+
+<ul>
+<li>The UI objects are <em>configurable</em> with <code>\Charcoal\View\ViewConfig</code>.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/locomotivemtl/charcoal-translation"><code>locomotivemtl/charcoal-translation</code></a>
++</li>
+<li>
+<a href="https://github.com/locomotivemtl/charcoal-view"><code>locomotivemtl/charcoal-view</code></a> 0.1+
+
+<ul>
+<li>The base <code>UiItem</code> can be are <code>Viewable</code>, meaning they can be rendered with a <code>View</code>.</li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="example-usage" class="anchor" href="#example-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Usage</h1>
+
+<h2>
+<a id="form" class="anchor" href="#form" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$metadata</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">\Charcoal\Config\</span><span class="pl-c1">GenericMetadata</span>([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>properties<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>first_name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>string<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">        ],</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>last_name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>string<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">        ],</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>email<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>email<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">        ]</span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">]);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$formData</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>first_name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Mathieu<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>last_name<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Ducharme<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>email<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>mat@locomotive.ca<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$formConfig</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>                      <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>charcoal/ui/form/generic<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>template_ident<span class="pl-pds">'</span></span>    <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>foo/bar/form<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>template_data<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span> [],</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>label<span class="pl-pds">'</span></span>                     <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>Example Form<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>groups<span class="pl-pds">'</span></span>                    <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">'</span>layout<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span>[</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">'</span>structure<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">                    <span class="pl-s"><span class="pl-pds">'</span>columns<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">                        [<span class="pl-c1">1</span>,<span class="pl-c1">1</span>],</span>
+<span class="pl-s1">                        [<span class="pl-c1">1</span>]</span>
+<span class="pl-s1">                    ]</span>
+<span class="pl-s1">                ]</span>
+<span class="pl-s1">            ],</span>
+<span class="pl-s1">            <span class="pl-s"><span class="pl-pds">'</span>properties<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">'</span>first_name<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">'</span>last_name<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">                <span class="pl-s"><span class="pl-pds">'</span>email<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">            ]</span>
+<span class="pl-s1">        ]</span>
+<span class="pl-s1">    ]</span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$formBuilder</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">\Charcoal\Ui\Form\</span><span class="pl-c1">FormBuilder</span>([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>form_factory<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-k">new</span> <span class="pl-c1">\Charcoal\Ui\Form\</span><span class="pl-c1">FormFactory</span>(),</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>view<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$container</span>[<span class="pl-s"><span class="pl-pds">'</span>view<span class="pl-pds">'</span></span>]</span>
+<span class="pl-s1">]);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$form</span> <span class="pl-k">=</span> <span class="pl-smi">$formBuilder</span><span class="pl-k">-&gt;</span>buid(<span class="pl-smi">$formConfig</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>setMetadata(<span class="pl-smi">$metadata</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>setFormData(<span class="pl-smi">$formData</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>render();</span></pre></div>
+
+<h1>
+<a id="base-ui-item" class="anchor" href="#base-ui-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base UI Item</h1>
+
+<p>All UI classes implements the same basic class: <code>\Charcoal\Ui\UiItemInterface</code>. This interface defines</p>
+
+<h2>
+<a id="base-ui-item-config" class="anchor" href="#base-ui-item-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base UI Item config</h2>
+
+<ul>
+<li><code>type</code></li>
+<li><code>title</code></li>
+<li><code>subtitle</code></li>
+<li><code>description</code></li>
+<li><code>notes</code></li>
+<li>
+<code>template_ident</code>
+
+<ul>
+<li>The default view template.</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="view-integration" class="anchor" href="#view-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>View Integration</h2>
+
+<p>The <code>UiItemInterface</code> is a <em>Viewable</em> item; that means it also implements the <code>\Charcoal\View\ViewableInterface</code>. The <code>AbstractUiItem</code> fully implements this interface by using <code>\Charcoal\View\ViewableTrait</code>.</p>
+
+<p><em>Viewable</em> objects can set a <em>View</em> object with <code>setView($view)</code> have a <code>template_ident</code> (which can be set with <code>setTemplateIdent($id)</code>). See the <a href="https://github.com/locomotivemtl/charcoal-view">charcoal-view</a> module for details.</p>
+
+<p>The easiest way to use a View is by setting a <code>ViewInterface</code> object as <code>view</code> service on a DI container / Service Provider.</p>
+
+<h1>
+<a id="dashboard" class="anchor" href="#dashboard" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dashboard</h1>
+
+<p>Dashboards define a <em>layout</em> of <em>widgets</em>.</p>
+
+<ul>
+<li>
+<code>layout</code> is a <code>LayoutInterface</code> object that can be created with a <code>LayoutBuilder</code>.</li>
+<li>
+<code>widgets</code> is a collection of any <code>UiItemInterface</code> objects.</li>
+</ul>
+
+<h2>
+<a id="dashboard-config" class="anchor" href="#dashboard-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dashboard config</h2>
+
+<ul>
+<li>
+<code>type</code> <em>string</em>
+</li>
+<li>
+<code>layout</code> <em>array</em>
+</li>
+<li>
+<code>widgets</code> <em>array</em>
+</li>
+</ul>
+
+<h2>
+<a id="dashboard-dependencies" class="anchor" href="#dashboard-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dashboard dependencies</h2>
+
+<ul>
+<li><code>logger</code></li>
+<li><code>view</code></li>
+<li><code>widget_factory</code></li>
+</ul>
+
+<h2>
+<a id="dashboard-api" class="anchor" href="#dashboard-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dashboard API</h2>
+
+<ul>
+<li><code>setLayout()</code></li>
+<li><code>layout()</code></li>
+<li><code>setWidgets(array $)</code></li>
+<li><code>widgets()</code></li>
+<li><code>addWidget()</code></li>
+<li><code>numWidgets()</code></li>
+<li><code>hasWidget()</code></li>
+</ul>
+
+<h1>
+<a id="layout" class="anchor" href="#layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layout</h1>
+
+<p>Layouts define a grid (column-based) structure.</p>
+
+<h2>
+<a id="layout-config" class="anchor" href="#layout-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layout config</h2>
+
+<ul>
+<li>
+<code>structure</code>
+
+<ul>
+<li><code>columns</code></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="layout-api" class="anchor" href="#layout-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layout API</h2>
+
+<ul>
+<li><code>setStructure(array $layouts)</code></li>
+<li><code>structure()</code></li>
+<li><code>numRows()</code></li>
+<li><code>rowIndex($position = null)</code></li>
+<li><code>rowData($position = null)</code></li>
+<li><code>rowNumColumns($position = null)</code></li>
+<li><code>rowNumCells($position = null)</code></li>
+<li><code>rowFirstCellIndex($position = null)</code></li>
+<li><code>cellRowIndex($position = null)</code></li>
+<li><code>numCellsTotal()</code></li>
+<li><code>cellSpan($position = null)</code></li>
+<li><code>cellSpanBy12($position = null)</code></li>
+<li><code>cellStartsRow($position = null)</code></li>
+<li><code>cellEndsRow($position = null)</code></li>
+<li><code>start()</code></li>
+<li><code>end()</code></li>
+</ul>
+
+<h2>
+<a id="layout-aware-objects" class="anchor" href="#layout-aware-objects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layout Aware objects</h2>
+
+<p>In the <code>charcoal-ui</code> module, 3 base objects use a layout: <em>dashboards</em>, <em>forms</em> and <em>form groups</em>.</p>
+
+<p>Those classes implement the Layout requirement by implementing the <code>\Charcoal\Ui\Layout\LayoutAwareInterface</code> with the use of its corresponding <code>LayoutAwareTrait</code>.</p>
+
+<h1>
+<a id="form-1" class="anchor" href="#form-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form</h1>
+
+<p>Forms define a layout of form groups, form options, data and metadata.</p>
+
+<ul>
+<li>Forms have <a href="#form-group"><em>groups</em></a>, which have <a href="#form-input"><em>inputs</em></a>.</li>
+<li>Groups can be layouted with a <code>layout</code> object.</li>
+<li>Form can be pre-populated with <em>form data</em>.</li>
+<li>
+<em>Metadata</em> ca</li>
+</ul>
+
+<h2>
+<a id="form-config" class="anchor" href="#form-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form config</h2>
+
+<ul>
+<li><code>type</code></li>
+<li>
+<code>action</code>
+
+<ul>
+<li>Where the form will be sent upon submission (URL).</li>
+</ul>
+</li>
+<li>
+<code>method</code>
+
+<ul>
+<li>The http method to submit the form: "post" (default) or "get".</li>
+</ul>
+</li>
+<li><code>layout</code></li>
+<li><code>groups</code></li>
+<li><code>form_data</code></li>
+<li><code>metadata</code></li>
+</ul>
+
+<h2>
+<a id="form-dependencies" class="anchor" href="#form-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form dependencies</h2>
+
+<ul>
+<li><code>view</code></li>
+<li><code>group_factory</code></li>
+</ul>
+
+<h2>
+<a id="form-api" class="anchor" href="#form-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form API</h2>
+
+<ul>
+<li><code>setAction($action)</code></li>
+<li><code>action()</code></li>
+<li><code>setMethod($method)</code></li>
+<li><code>method()</code></li>
+<li><code>setGroups(array $groups)</code></li>
+<li><code>groups()</code></li>
+<li><code>addGroup($groupIdent, $groupData)</code></li>
+<li><code>numGroups()</code></li>
+<li><code>hasGroups()</code></li>
+<li><code>setFormData(array $formData)</code></li>
+<li><code>formData()</code></li>
+<li><code>addFormData()</code></li>
+</ul>
+
+<h1>
+<a id="form-group" class="anchor" href="#form-group" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form Group</h1>
+
+<h2>
+<a id="form-group-config" class="anchor" href="#form-group-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form group config</h2>
+
+<ul>
+<li><code>form</code></li>
+<li><code>template_ident</code></li>
+<li><code>template_controller</code></li>
+<li><code>priority</code></li>
+<li><code>layout</code></li>
+<li><code>properties</code></li>
+</ul>
+
+<h2>
+<a id="form-group-api" class="anchor" href="#form-group-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form group API</h2>
+
+<ul>
+<li><code>setForm($form)</code></li>
+<li><code>setInputs(array $groups)</code></li>
+<li><code>inputs()</code></li>
+<li><code>addInput($inputIdent, $inputData)</code></li>
+<li><code>numInputs()</code></li>
+<li><code>hasInputs()</code></li>
+</ul>
+
+<h1>
+<a id="form-input" class="anchor" href="#form-input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form Input</h1>
+
+<ul>
+<li><code>form</code></li>
+<li><code>label</code></li>
+<li><code>property_ident</code></li>
+<li><code>template_ident</code></li>
+<li><code>template_data</code></li>
+<li><code>read_only</code></li>
+<li><code>required</code></li>
+<li><code>disabled</code></li>
+<li><code>multiple</code></li>
+<li><code>input_id</code></li>
+<li><code>input_name</code></li>
+</ul>
+
+<h1>
+<a id="menu" class="anchor" href="#menu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Menu</h1>
+
+<h1>
+<a id="menu-item" class="anchor" href="#menu-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Menu Item</h1>
+
+<p>Menu items define a menu level (ident, label and url) and its children (array of Menu Item).</p>
+
+<h2>
+<a id="menu-item-config" class="anchor" href="#menu-item-config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Menu item config</h2>
+
+<ul>
+<li><code>ident</code></li>
+<li><code>icon_ident</code></li>
+<li><code>label</code></li>
+<li><code>url</code></li>
+<li><code>children</code></li>
+</ul>
+
+<h2>
+<a id="menu-item-api" class="anchor" href="#menu-item-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Menu item API</h2>
+
+<ul>
+<li><code>setIdent($ident)</code></li>
+<li><code>ident()</code></li>
+<li><code>setLabel($label)</code></li>
+<li><code>label()</code></li>
+<li><code>setUrl($url)</code></li>
+<li><code>url()</code></li>
+<li><code>setChildren($children)</code></li>
+<li><code>children()</code></li>
+<li><code>numChildren()</code></li>
+<li><code>hasChildren()</code></li>
+</ul>
+
+<h1>
+<a id="creational-helpers" class="anchor" href="#creational-helpers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creational Helpers</h1>
+
+<p>Most UI elements are very dynamic. The types of object to create is often read from a string in a configuration object. Therefore, factories are the preferred way of instanciating new UI items.</p>
+
+<p>Ui items have also many inter-connected dependencies. Builders should therefore be used for object creation / instanciation. They use a factory internally, and have a <code>build($opts)</code> methods that allow to retrieve class name from a dynamic source, do initialization, dpendencies management and more. Builders require <code>Pimple</code> for a DI container.</p>
+
+<h2>
+<a id="factories" class="anchor" href="#factories" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Factories</h2>
+
+<ul>
+<li><code>\Charcoal\Ui\Dashboard\DashboardFactory</code></li>
+<li><code>\Charcoal\Ui\Layout\LayoutFactory</code></li>
+<li><code>\Charcoal\Ui\Form\FormFactory</code></li>
+<li><code>\Charcoal\Ui\FormGroup\FormGroupFactory</code></li>
+<li><code>\Charcoal\Ui\FormInput\FormInputFactory</code></li>
+<li><code>\Charcoal\Ui\Menu\MenuFactory</code></li>
+<li><code>\Charcoal\Ui\MenuItem\MenuItemFactory</code></li>
+</ul>
+
+<h2>
+<a id="builders" class="anchor" href="#builders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Builders</h2>
+
+<ul>
+<li><code>\Charcoal\Ui\Dashboard\DashboardBuilder</code></li>
+<li><code>\Charcoal\Ui\Layout\LayoutBuilder</code></li>
+<li><code>\Charcoal\Ui\Form\FormBuilder</code></li>
+<li><code>\Charcoal\Ui\FormGroup\FormGroupBuilder</code></li>
+<li><code>\Charcoal\Ui\FormInput\FormInputBuilder</code></li>
+<li><code>\Charcoal\Ui\Menu\MenuBuilder</code></li>
+<li><code>\Charcoal\Ui\MenuItem\MenuItemBuilder</code></li>
+</ul>
+
+<h1>
+<a id="service-providers" class="anchor" href="#service-providers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Service Providers</h1>
+
+<p>Service providers are provided in the <code>Charcoal\Ui\ServiceProvider</code> namespace for for convenience. They are the recommended way of using <code>charcoal-ui</code>, as they register all the creational utilities to a container, taking care of dependencies.</p>
+
+<ul>
+<li>
+<code>\Charcoal\Ui\ServiceProvider\DashboardServiceProvider</code>
+
+<ul>
+<li><code>dashboard/factory</code></li>
+<li><code>dashboard/builder</code></li>
+</ul>
+</li>
+<li>
+<code>\Charcoal\Ui\ServiceProvider\FormServiceProvider</code>
+
+<ul>
+<li><code>form/factory</code></li>
+<li><code>form/builder</code></li>
+<li><code>form/group/factory</code></li>
+<li><code>form/group/builder</code></li>
+<li><code>form/input/factory</code></li>
+<li><code>form/input/builder</code></li>
+</ul>
+</li>
+<li>
+<code>\Charcoal\Ui\ServiceProvider\LayoutServiceProvider</code>
+
+<ul>
+<li><code>layout/factory</code></li>
+<li><code>layout/builder</code></li>
+</ul>
+</li>
+<li>
+<code>\Charcoal\Ui\ServiceProvider\MenuServiceProvider</code>
+
+<ul>
+<li><code>menu/factory</code></li>
+<li><code>menu/builder</code></li>
+<li><code>menu/item/factory</code></li>
+<li><code>menu/item/builder</code></li>
+</ul>
+</li>
+<li>
+<code>\Charcoal\Ui\ServiceProvider\UiServiceProvider</code>
+
+<ul>
+<li>Register all the other service providers (dashboard, form, layout and menu).</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="required-services" class="anchor" href="#required-services" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Required services</h2>
+
+<p>There are a few dependencies on external services, that should be set on the same DI container as the one passed to the service providers:</p>
+
+<ul>
+<li>
+<code>logger</code>, a PSR-3 logger instance.
+
+<ul>
+<li>Typically a <code>monolog</code> instance from <code>charcoal-app</code>.</li>
+</ul>
+</li>
+<li>
+<code>view</code>, a <code>\Charcoal\View\ViewInterface</code> instance.
+
+<ul>
+<li>Typically provided with <code>\Charcoal\App\Provider\ViewServiceProvider</code>.</li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h1>
+
+<h2>
+<a id="development-dependencies" class="anchor" href="#development-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development dependencies</h2>
+
+<ul>
+<li><code>npm</code></li>
+<li>
+<code>grunt</code> (install with <code>npm install grunt-cli</code>)</li>
+<li><code>composer</code></li>
+<li><code>phpunit</code></li>
+</ul>
+
+<h2>
+<a id="coding-style" class="anchor" href="#coding-style" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coding Style</h2>
+
+<p>The Charcoal-UI module follows the Charcoal coding-style:</p>
+
+<ul>
+<li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md"><em>PSR-1</em></a></li>
+<li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md"><em>PSR-2</em></a></li>
+<li>
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md"><em>PSR-4</em></a>, autoloading is therefore provided by <em>Composer</em>
+</li>
+<li>
+<a href="http://phpdoc.org/"><em>phpDocumentor</em></a>
+
+<ul>
+<li>Add DocBlocks for all classes, methods, and functions;</li>
+<li>For type-hinting, use <code>boolean</code> (instead of <code>bool</code>), <code>integer</code> (instead of <code>int</code>), <code>float</code> (instead of <code>double</code> or <code>real</code>);</li>
+<li>Omit the <code>@return</code> tag if the method does not return anything.</li>
+</ul>
+</li>
+<li>Naming conventions
+
+<ul>
+<li>Read the <a href="phpcs.xml">phpcs.xml</a> file for all the details.</li>
+</ul>
+</li>
+</ul>
+
+<blockquote>
+<p>Coding style validation / enforcement can be performed with <code>grunt phpcs</code>. An auto-fixer is also available with <code>grunt phpcbf</code>.</p>
+</blockquote>
+
+<h2>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors</h2>
+
+<ul>
+<li>Mathieu Ducharme <a href="mailto:mat@locomotive.ca">mat@locomotive.ca</a>
+</li>
+</ul>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h2>
+
+<h3>
+<a id="unreleased" class="anchor" href="#unreleased" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unreleased</h3>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/locomotivemtl/charcoal-ui">Charcoal-ui</a> is maintained by <a href="https://github.com/locomotivemtl">locomotivemtl</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
