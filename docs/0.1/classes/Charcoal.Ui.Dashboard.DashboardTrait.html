@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">339</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-112852498"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-112852498" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1112578487"></a>
+                                <a href="../namespaces/Charcoal.html" style="margin-left: 30px; padding-left: 0">Charcoal</a>
+            </div>
+            <div id="namespace-1112578487" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2132856196"></a>
+                                <a href="../namespaces/Charcoal.Ui.html" style="margin-left: 30px; padding-left: 0">Ui</a>
+            </div>
+            <div id="namespace-2132856196" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1359691146"></a>
+                                <a href="../namespaces/Charcoal.Ui.Dashboard.html" style="margin-left: 30px; padding-left: 0">Dashboard</a>
+            </div>
+            <div id="namespace-1359691146" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">DashboardInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html">DashboardTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.AbstractDashboard.html">AbstractDashboard</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardBuilder.html">DashboardBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardConfig.html">DashboardConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardFactory.html">DashboardFactory</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.FormInputConfig.html">FormInputConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.GenericDashboard.html">GenericDashboard</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.UiItemConfig.html">UiItemConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1139659028"></a>
+                                <a href="../namespaces/Charcoal.Ui.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-1139659028" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Form.FormInterface.html">FormInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Form.FormTrait.html">FormTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Form.AbstractForm.html">AbstractForm</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormBuilder.html">FormBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormConfig.html">FormConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormFactory.html">FormFactory</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.GenericForm.html">GenericForm</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1796721630"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormGroup.html" style="margin-left: 30px; padding-left: 0">FormGroup</a>
+            </div>
+            <div id="namespace-1796721630" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupInterface.html">FormGroupInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupTrait.html">FormGroupTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.AbstractFormGroup.html">AbstractFormGroup</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupBuilder.html">FormGroupBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupConfig.html">FormGroupConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupFactory.html">FormGroupFactory</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.GenericFormGroup.html">GenericFormGroup</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1444277311"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormInput.html" style="margin-left: 30px; padding-left: 0">FormInput</a>
+            </div>
+            <div id="namespace-1444277311" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormInput.FormInputInterface.html">FormInputInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.AbstractFormInput.html">AbstractFormInput</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.FormInputBuilder.html">FormInputBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.FormInputFactory.html">FormInputFactory</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.GenericFormInput.html">GenericFormInput</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-512349076"></a>
+                                <a href="../namespaces/Charcoal.Ui.Layout.html" style="margin-left: 30px; padding-left: 0">Layout</a>
+            </div>
+            <div id="namespace-512349076" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareInterface.html">LayoutAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutInterface.html">LayoutInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareTrait.html">LayoutAwareTrait</a></li>
+                                                    <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html">LayoutTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Layout.AbstractLayout.html">AbstractLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.GenericLayout.html">GenericLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutBuilder.html">LayoutBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutConfig.html">LayoutConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutFactory.html">LayoutFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-990839264"></a>
+                                <a href="../namespaces/Charcoal.Ui.Menu.html" style="margin-left: 30px; padding-left: 0">Menu</a>
+            </div>
+            <div id="namespace-990839264" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Menu.MenuInterface.html">MenuInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.AbstractMenu.html">AbstractMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.GenericMenu.html">GenericMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuBuilder.html">MenuBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuConfig.html">MenuConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuFactory.html">MenuFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-246972549"></a>
+                                <a href="../namespaces/Charcoal.Ui.MenuItem.html" style="margin-left: 30px; padding-left: 0">MenuItem</a>
+            </div>
+            <div id="namespace-246972549" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">MenuItemInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html">AbstractMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.GenericMenuItem.html">GenericMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemBuilder.html">MenuItemBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemConfig.html">MenuItemConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemFactory.html">MenuItemFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-670474044"></a>
+                                <a href="../namespaces/Charcoal.Ui.ServiceProvider.html" style="margin-left: 30px; padding-left: 0">ServiceProvider</a>
+            </div>
+            <div id="namespace-670474044" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.DashboardServiceProvider.html">DashboardServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.FormServiceProvider.html">FormServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.LayoutServiceProvider.html">LayoutServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.MenuServiceProvider.html">MenuServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.UiServiceProvider.html">UiServiceProvider</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.UiItemInterface.html">UiItemInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.UiItemtrait.html">UiItemtrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.AbstractUiItem.html">AbstractUiItem</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Charcoal.Ui.Dashboard.html">\Charcoal\Ui\Dashboard</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Charcoal\Ui\Dashboard</small>DashboardTrait</h1>
+                    <p><em>Full implementation of the Dashboard Interface, as abstract class.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_setWidgetCallback" class="">setWidgetCallback()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_setWidgets" class="">setWidgets()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_addWidget" class="">addWidget()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_widgets" class="">widgets()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_hasWidgets" class="">hasWidgets()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_numWidgets" class="">numWidgets()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_setWidgetBuilder" class="">setWidgetBuilder()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#method_sortWidgetsByPriority" class="">sortWidgetsByPriority()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#property_widgetBuilder" class="">$widgetBuilder</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#property_widgets" class="">$widgets</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html#property_widgetCallback" class="">$widgetCallback</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Charcoal\Ui\Dashboard\DashboardTrait</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_widgetBuilder" name="property_widgetBuilder" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$widgetBuilder</h3>
+                <pre class="signature">$widgetBuilder : mixed</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                mixed
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_widgets" name="property_widgets" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$widgets</h3>
+                <pre class="signature">$widgets : array&lt;mixed,\Charcoal\Ui\UiItemInterface&gt;</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,<a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>&gt;
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_widgetCallback" name="property_widgetCallback" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$widgetCallback</h3>
+                <pre class="signature">$widgetCallback : callable</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                callable
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWidgetCallback" name="method_setWidgetCallback" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWidgetCallback()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWidgetCallback(callable  <span class="argument">$cb</span>) : \Charcoal\Ui\Dashboard\DashboardInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>callable</td>
+                                <td>$cb </td>
+                                <td><p>The widget callback.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">\Charcoal\Ui\Dashboard\DashboardInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWidgets" name="method_setWidgets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWidgets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWidgets(array  <span class="argument">$widgets</span>) : \Charcoal\Ui\Dashboard\DashboardInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$widgets </td>
+                                <td><p>The widgets.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">\Charcoal\Ui\Dashboard\DashboardInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addWidget" name="method_addWidget" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addWidget()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addWidget(string  <span class="argument">$widgetIdent</span>, \Charcoal\Ui\Dashboard\WidgetInterface|array  <span class="argument">$widget</span>) : \Charcoal\Ui\Dashboard\DashboardInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$widgetIdent </td>
+                                <td><p>The widget identifier.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Charcoal\Ui\Dashboard\WidgetInterface|array</td>
+                                <td>$widget </td>
+                                <td><p>The widget object or structure.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the argument is not a widget object or structure.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">\Charcoal\Ui\Dashboard\DashboardInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_widgets" name="method_widgets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">widgets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">widgets(callable  <span class="argument">$widgetCallback = null</span>) : void</pre>
+                <p><em>Widgets generator.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>callable</td>
+                                <td>$widgetCallback </td>
+                                <td><p>Widget callback.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_hasWidgets" name="method_hasWidgets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">hasWidgets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">hasWidgets() : boolean</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_numWidgets" name="method_numWidgets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">numWidgets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">numWidgets() : integer</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWidgetBuilder" name="method_setWidgetBuilder" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setWidgetBuilder()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWidgetBuilder(mixed  <span class="argument">$builder</span>) : \Charcoal\Ui\Dashboard\DashboardInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$builder </td>
+                                <td><p>The builder to create customized widget objects.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">\Charcoal\Ui\Dashboard\DashboardInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sortWidgetsByPriority" name="method_sortWidgetsByPriority" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">sortWidgetsByPriority()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sortWidgetsByPriority(mixed  <span class="argument">$a</span>, mixed  <span class="argument">$b</span>) : integer</pre>
+                <p><em>To be called with uasort()</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$a </td>
+                                <td><p>Widget a.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$b </td>
+                                <td><p>Widget b.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>Sorting value: -1, 0, or 1</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/Dashboard.DashboardTrait.html"><div class="path-wrapper">Dashboard/DashboardTrait.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">DashboardTrait.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Dashboard/DashboardTrait.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 12th, 2016 at 12:48.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
