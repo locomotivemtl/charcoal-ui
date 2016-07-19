@@ -156,7 +156,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a>\<a href="namespace-Charcoal.Ui.Form.html">Form</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.Form.FormTrait.html#13-323" title="Go to source code">Charcoal/Ui/Form/FormTrait.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.Form.FormTrait.html#15-325" title="Go to source code">Charcoal/Ui/Form/FormTrait.php</a>
 		<br>
 	</div>
 
@@ -164,7 +164,7 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="setFormGroupBuilder" id="_setFormGroupBuilder">
+	<tr data-order="setFormGroupFactory" id="_setFormGroupFactory">
 
 		<td class="attributes"><code>
 			 public 
@@ -175,8 +175,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setFormGroupBuilder">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#58-66" title="Go to source code">setFormGroupBuilder</a>( <span><code><a href="class-Charcoal.Ui.FormGroup.FormGroupBuilder.html">Charcoal\Ui\FormGroup\FormGroupBuilder</a></code> <var>$builder</var></span> )</code>
+		<a class="anchor" href="#_setFormGroupFactory">#</a>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#62-70" title="Go to source code">setFormGroupFactory</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span> )</code>
 
 		<div class="description short">
 			
@@ -188,8 +188,8 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$builder</var></dt>
-					<dd>A builder, to create customized form gorup objects.</dd>
+					<dt><var>$factory</var></dt>
+					<dd>A factory, to create customized form gorup objects.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -203,19 +203,19 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="formGroupBuilder" id="_formGroupBuilder">
+	<tr data-order="formGroupFactory" id="_formGroupFactory">
 
 		<td class="attributes"><code>
 			 protected 
 
-			<code><a href="class-Charcoal.Ui.FormGroup.FormGroupBuilder.html">Charcoal\Ui\FormGroup\FormGroupBuilder</a></code>
+			FormGroupFactory
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_formGroupBuilder">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#68-80" title="Go to source code">formGroupBuilder</a>( )</code>
+		<a class="anchor" href="#_formGroupFactory">#</a>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#72-84" title="Go to source code">formGroupFactory</a>( )</code>
 
 		<div class="description short">
 			
@@ -228,12 +228,12 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Charcoal.Ui.FormGroup.FormGroupBuilder.html">Charcoal\Ui\FormGroup\FormGroupBuilder</a></code>
+					FormGroupFactory
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					Exception<br>If the form group builder object was not set / injected.
+					Exception<br>If the form group factory object was not set / injected.
 				</div>
 
 
@@ -253,7 +253,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setGroupCallback">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#82-90" title="Go to source code">setGroupCallback</a>( <span>callable <var>$cb</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#86-94" title="Go to source code">setGroupCallback</a>( <span>callable <var>$cb</var></span> )</code>
 
 		<div class="description short">
 			
@@ -292,7 +292,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setAction">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#92-106" title="Go to source code">setAction</a>( <span>string <var>$action</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#96-110" title="Go to source code">setAction</a>( <span>string <var>$action</var></span> )</code>
 
 		<div class="description short">
 			
@@ -335,7 +335,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_action">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#108-114" title="Go to source code">action</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#112-118" title="Go to source code">action</a>( )</code>
 
 		<div class="description short">
 			
@@ -369,7 +369,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setMethod">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#116-133" title="Go to source code">setMethod</a>( <span>string <var>$method</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#120-137" title="Go to source code">setMethod</a>( <span>string <var>$method</var></span> )</code>
 
 		<div class="description short">
 			<p>Set the method (forcing lowercase) to "post" or "get".</p>
@@ -412,7 +412,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_method">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#135-141" title="Go to source code">method</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#139-145" title="Go to source code">method</a>( )</code>
 
 		<div class="description short">
 			
@@ -446,7 +446,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setL10nMode">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#143-151" title="Go to source code">setL10nMode</a>( <span>string <var>$mode</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#147-155" title="Go to source code">setL10nMode</a>( <span>string <var>$mode</var></span> )</code>
 
 		<div class="description short">
 			
@@ -485,7 +485,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_l10nMode">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#153-159" title="Go to source code">l10nMode</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#157-163" title="Go to source code">l10nMode</a>( )</code>
 
 		<div class="description short">
 			
@@ -519,7 +519,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setGroups">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#161-172" title="Go to source code">setGroups</a>( <span>array <var>$groups</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#165-176" title="Go to source code">setGroups</a>( <span>array <var>$groups</var></span> )</code>
 
 		<div class="description short">
 			
@@ -558,7 +558,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addGroup">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#174-207" title="Go to source code">addGroup</a>( <span>string <var>$groupIdent</var></span>, <span>array|<code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$group</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#178-211" title="Go to source code">addGroup</a>( <span>string <var>$groupIdent</var></span>, <span>array|<code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$group</var></span> )</code>
 
 		<div class="description short">
 			
@@ -603,7 +603,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_defaultGroupType">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#209-215" title="Go to source code">defaultGroupType</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#213-219" title="Go to source code">defaultGroupType</a>( )</code>
 
 		<div class="description short">
 			
@@ -637,7 +637,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_groups">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#217-254" title="Go to source code">groups</a>( <span>callable <var>$groupCallback</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#221-258" title="Go to source code">groups</a>( <span>callable <var>$groupCallback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Form Group generator.</p>
@@ -676,7 +676,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasGroups">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#256-262" title="Go to source code">hasGroups</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#260-266" title="Go to source code">hasGroups</a>( )</code>
 
 		<div class="description short">
 			
@@ -710,7 +710,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_numGroups">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#264-270" title="Go to source code">numGroups</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#268-274" title="Go to source code">numGroups</a>( )</code>
 
 		<div class="description short">
 			
@@ -744,7 +744,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFormData">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#274-282" title="Go to source code">setFormData</a>( <span>array <var>$formData</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#276-284" title="Go to source code">setFormData</a>( <span>array <var>$formData</var></span> )</code>
 
 		<div class="description short">
 			
@@ -783,7 +783,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addFormData">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#284-299" title="Go to source code">addFormData</a>( <span>string <var>$key</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#286-301" title="Go to source code">addFormData</a>( <span>string <var>$key</var></span>, <span>mixed <var>$val</var></span> )</code>
 
 		<div class="description short">
 			
@@ -828,7 +828,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formData">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#301-307" title="Go to source code">formData</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#303-309" title="Go to source code">formData</a>( )</code>
 
 		<div class="description short">
 			
@@ -862,7 +862,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sortGroupsByPriority">#</a>
-		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#309-322" title="Go to source code">sortGroupsByPriority</a>( <span><code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$a</var></span>, <span><code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$b</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Form.FormTrait.html#311-324" title="Go to source code">sortGroupsByPriority</a>( <span><code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$a</var></span>, <span><code><a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html">Charcoal\Ui\FormGroup\FormGroupInterface</a></code> <var>$b</var></span> )</code>
 
 		<div class="description short">
 			<p>To be called with uasort()</p>
@@ -913,7 +913,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.Form.FormTrait.html#33-36" title="Go to source code"><var>$groups</var></a>
+				<a href="source-class-Charcoal.Ui.Form.FormTrait.html#35-38" title="Go to source code"><var>$groups</var></a>
 
 			<div class="description short">
 				<p>$groups</p>
@@ -931,28 +931,28 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="formGroupBuilder" id="$formGroupBuilder">
+	<tr data-order="formGroupFactory" id="$formGroupFactory">
 		<td class="attributes"><code>
 			protected  
-			<code><a href="class-Charcoal.Ui.FormGroup.FormGroupBuilder.html">Charcoal\Ui\FormGroup\FormGroupBuilder</a></code>
+			Charcoal\Factory\FactoryInterface
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.Form.FormTrait.html#48-51" title="Go to source code"><var>$formGroupBuilder</var></a>
+				<a href="source-class-Charcoal.Ui.Form.FormTrait.html#50-53" title="Go to source code"><var>$formGroupFactory</var></a>
 
 			<div class="description short">
-				<p>$formGroupBuilder</p>
+				<p>$formGroupFactory</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>$formGroupBuilder</p>
+				<p>$formGroupFactory</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$formGroupBuilder" class="anchor">#</a>
-				<code><span class="php-keyword1">null</span></code>
+				<a href="#$formGroupFactory" class="anchor">#</a>
+				<code></code>
 			</div>
 		</td>
 	</tr>
