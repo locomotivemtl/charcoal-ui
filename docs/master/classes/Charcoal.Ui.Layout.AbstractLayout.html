@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">324</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-851532933"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-851532933" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1004853980"></a>
+                                <a href="../namespaces/Charcoal.html" style="margin-left: 30px; padding-left: 0">Charcoal</a>
+            </div>
+            <div id="namespace-1004853980" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-187153062"></a>
+                                <a href="../namespaces/Charcoal.Ui.html" style="margin-left: 30px; padding-left: 0">Ui</a>
+            </div>
+            <div id="namespace-187153062" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-192871521"></a>
+                                <a href="../namespaces/Charcoal.Ui.Dashboard.html" style="margin-left: 30px; padding-left: 0">Dashboard</a>
+            </div>
+            <div id="namespace-192871521" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">DashboardInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html">DashboardTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.AbstractDashboard.html">AbstractDashboard</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardBuilder.html">DashboardBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardConfig.html">DashboardConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.FormInputConfig.html">FormInputConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.GenericDashboard.html">GenericDashboard</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.UiItemConfig.html">UiItemConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1368951737"></a>
+                                <a href="../namespaces/Charcoal.Ui.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-1368951737" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Form.FormInterface.html">FormInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Form.FormTrait.html">FormTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Form.AbstractForm.html">AbstractForm</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormBuilder.html">FormBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormConfig.html">FormConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.GenericForm.html">GenericForm</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1882255382"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormGroup.html" style="margin-left: 30px; padding-left: 0">FormGroup</a>
+            </div>
+            <div id="namespace-1882255382" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupInterface.html">FormGroupInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupTrait.html">FormGroupTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.AbstractFormGroup.html">AbstractFormGroup</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupConfig.html">FormGroupConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.GenericFormGroup.html">GenericFormGroup</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1699388722"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormInput.html" style="margin-left: 30px; padding-left: 0">FormInput</a>
+            </div>
+            <div id="namespace-1699388722" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormInput.FormInputInterface.html">FormInputInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.AbstractFormInput.html">AbstractFormInput</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.FormInputBuilder.html">FormInputBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.GenericFormInput.html">GenericFormInput</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-389182089"></a>
+                                <a href="../namespaces/Charcoal.Ui.Layout.html" style="margin-left: 30px; padding-left: 0">Layout</a>
+            </div>
+            <div id="namespace-389182089" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareInterface.html">LayoutAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutInterface.html">LayoutInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareTrait.html">LayoutAwareTrait</a></li>
+                                                    <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html">LayoutTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Layout.AbstractLayout.html">AbstractLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.GenericLayout.html">GenericLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutBuilder.html">LayoutBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutConfig.html">LayoutConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutFactory.html">LayoutFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1028709576"></a>
+                                <a href="../namespaces/Charcoal.Ui.Menu.html" style="margin-left: 30px; padding-left: 0">Menu</a>
+            </div>
+            <div id="namespace-1028709576" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Menu.MenuInterface.html">MenuInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.AbstractMenu.html">AbstractMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.GenericMenu.html">GenericMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuBuilder.html">MenuBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuConfig.html">MenuConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuFactory.html">MenuFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2078915269"></a>
+                                <a href="../namespaces/Charcoal.Ui.MenuItem.html" style="margin-left: 30px; padding-left: 0">MenuItem</a>
+            </div>
+            <div id="namespace-2078915269" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">MenuItemInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html">AbstractMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.GenericMenuItem.html">GenericMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemBuilder.html">MenuItemBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemConfig.html">MenuItemConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemFactory.html">MenuItemFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-453040228"></a>
+                                <a href="../namespaces/Charcoal.Ui.ServiceProvider.html" style="margin-left: 30px; padding-left: 0">ServiceProvider</a>
+            </div>
+            <div id="namespace-453040228" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.DashboardServiceProvider.html">DashboardServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.FormServiceProvider.html">FormServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.LayoutServiceProvider.html">LayoutServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.MenuServiceProvider.html">MenuServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.UiServiceProvider.html">UiServiceProvider</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.UiItemInterface.html">UiItemInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.UiItemTrait.html">UiItemTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.AbstractUiItem.html">AbstractUiItem</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Charcoal.Ui.Layout.html">\Charcoal\Ui\Layout</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Charcoal\Ui\Layout</small>AbstractLayout</h1>
+                    <p><em>Default implementation of the LayoutInterface, as an abstract class.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_setPosition" class="">setPosition()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_position" class="">position()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_setStructure" class="">setStructure()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_structure" class="">structure()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_numRows" class="">numRows()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_rowIndex" class="">rowIndex()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_rowData" class="">rowData()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_rowNumColumns" class="">rowNumColumns()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_rowNumCells" class="">rowNumCells()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_rowFirstCellIndex" class="">rowFirstCellIndex()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_cellRowIndex" class="">cellRowIndex()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_numCellsTotal" class="">numCellsTotal()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_cellSpan" class="">cellSpan()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_cellSpanBy12" class="">cellSpanBy12()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_cellStartsRow" class="">cellStartsRow()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_cellEndsRow" class="">cellEndsRow()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_start" class="">start()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#method_end" class="">end()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#property_position" class="">$position</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html#property_structure" class="">$structure</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                            <span class="label label-info">abstract</span>
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Layout.AbstractLayout.html"><div class="path-wrapper">Layout/AbstractLayout.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper">\Charcoal\Config\AbstractEntity</div>
+                                                                                                    <div class="namespace-wrapper">\Charcoal\Ui\Layout\AbstractLayout</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/Charcoal.Ui.Layout.LayoutInterface.html"><div class="namespace-wrapper">\Charcoal\Ui\Layout\LayoutInterface</div></a></dd>
+                        
+                                                                                    <dt>Uses traits</dt>
+                                                        <dd>
+                                <a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html">                                    <div class="namespace-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div>
+                                </a>                            </dd>
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_position" name="property_position" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$position</h3>
+                <pre class="signature">$position : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_structure" name="property_structure" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$structure</h3>
+                <pre class="signature">$structure : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setPosition" name="method_setPosition" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setPosition()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setPosition(integer  <span class="argument">$position</span>) : \Charcoal\Ui\Layout\LayoutInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>The layout cell position.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the position argument is not a number.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.Layout.LayoutInterface.html">\Charcoal\Ui\Layout\LayoutInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_position" name="method_position" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">position()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">position() : integer</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setStructure" name="method_setStructure" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setStructure()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setStructure(array  <span class="argument">$layouts</span>) : array</pre>
+                <p><em>Prepare the layouts configuration in a simpler, ready, data structure.</em></p>
+                <p>This function goes through the layout options to expand loops into extra layout data...</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$layouts </td>
+                                <td><p>The original layout data, typically from configuration.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Computed layouts, ready for looping</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_structure" name="method_structure" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">structure()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">structure() : array</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_numRows" name="method_numRows" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">numRows()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">numRows() : integer</pre>
+                <p><em>Get the total number of rows</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rowIndex" name="method_rowIndex" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rowIndex()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rowIndex(integer  <span class="argument">$position = null</span>) : integer|null</pre>
+                <p><em>Get the row index at a certain position</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rowData" name="method_rowData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rowData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rowData(integer  <span class="argument">$position = null</span>) : array|null</pre>
+                <p><em>Get the row information</em></p>
+                <p>If no <code>$position</code> is specified, then the current position will be used.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rowNumColumns" name="method_rowNumColumns" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rowNumColumns()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rowNumColumns(integer  <span class="argument">$position = null</span>) : integer|null</pre>
+                <p><em>Get the number of columns (the colspan) of the row at a certain position</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rowNumCells" name="method_rowNumCells" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rowNumCells()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rowNumCells(integer  <span class="argument">$position = null</span>) : integer</pre>
+                <p><em>Get the number of cells at current position</em></p>
+                <p>This can be different than the number of columns, in case</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_rowFirstCellIndex" name="method_rowFirstCellIndex" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">rowFirstCellIndex()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">rowFirstCellIndex(integer  <span class="argument">$position = null</span>) : integer</pre>
+                <p><em>Get the cell index (position) of the first cell of current row</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cellRowIndex" name="method_cellRowIndex" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cellRowIndex()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cellRowIndex(integer  <span class="argument">$position = null</span>) : integer</pre>
+                <p><em>Get the cell index in the current row</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_numCellsTotal" name="method_numCellsTotal" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">numCellsTotal()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">numCellsTotal() : integer</pre>
+                <p><em>Get the total number of cells, in all rows</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cellSpan" name="method_cellSpan" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cellSpan()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cellSpan(integer  <span class="argument">$position = null</span>) : integer|null</pre>
+                <p><em>Get the span number (in # of columns) of the current cell</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cellSpanBy12" name="method_cellSpanBy12" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cellSpanBy12()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cellSpanBy12(integer  <span class="argument">$position = null</span>) : integer</pre>
+                <p><em>Get the span number as a part of 12 (for bootrap-style grids)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cellStartsRow" name="method_cellStartsRow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cellStartsRow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cellStartsRow(integer  <span class="argument">$position = null</span>) : boolean</pre>
+                <p><em>Get wether or not the current cell starts a row (is the first one on the row)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cellEndsRow" name="method_cellEndsRow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cellEndsRow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cellEndsRow(integer  <span class="argument">$position = null</span>) : boolean</pre>
+                <p><em>Get wether or not the current cell ends a row (is the last one on the row)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Optional. Forced position.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_start" name="method_start" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">start()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">start() : string</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_end" name="method_end" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">end()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">end() : string</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html"><div class="path-wrapper">\Charcoal\Ui\Layout\LayoutTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">AbstractLayout.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Layout/AbstractLayout.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on July 29th, 2016 at 22:02.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
