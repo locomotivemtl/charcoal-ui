@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface Charcoal\Ui\UiItemInterface</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.html">
+						Charcoal<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Charcoal.Ui.html">
+						Ui<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Charcoal.Ui.Dashboard.html">
+						Dashboard					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.Form.html">
+						Form					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.FormGroup.html">
+						FormGroup					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.FormInput.html">
+						FormInput					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.Layout.html">
+						Layout					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.Menu.html">
+						Menu					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.MenuItem.html">
+						MenuItem					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Charcoal.Ui.ServiceProvider.html">
+						ServiceProvider					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Charcoal.Ui.AbstractUiItem.html">AbstractUiItem</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-Charcoal.Ui.UiItemInterface.html">UiItemInterface</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Charcoal.Ui.UiItemTrait.html">UiItemTrait</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Charcoal.Ui.html" title="Summary of Charcoal\Ui"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface UiItemInterface</h1>
+
+
+	<div class="description">
+	<p>Basic UI Item Interface.</p>
+
+<p>-Also implements Entity Interface. - for <code>ArrayAccess</code>, <code>Serializable</code> and <code>JsonSerializable</code>. - also add <code>keys()</code>, <code>data()</code>, <code>keys</code>, <code>delegates</code> and <code>separator</code>) methods.
+-Also implements Viewable Interface. - add a required <code>view</code> dependency. Typically provided from DI container <code>['view']</code>. - also add <code>template_ident</code> property.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Charcoal\Ui\UiItemInterface</span></b>			
+			 implements 
+<span>Charcoal\Config\EntityInterface</span>, 
+			
+<span>Charcoal\View\ViewableInterface</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Charcoal.Ui.AbstractUiItem.html">Charcoal\Ui\AbstractUiItem</a>, 
+			<a href="class-Charcoal.Ui.Dashboard.DashboardInterface.html">Charcoal\Ui\Dashboard\DashboardInterface</a>, 
+			<a href="class-Charcoal.Ui.Form.AbstractForm.html">Charcoal\Ui\Form\AbstractForm</a>
+	</div>
+
+	<div>
+		<h4>Indirect known implementers</h4>
+			<a href="class-Charcoal.Ui.Dashboard.AbstractDashboard.html">Charcoal\Ui\Dashboard\AbstractDashboard</a>, 
+			<a href="class-Charcoal.Ui.Dashboard.GenericDashboard.html">Charcoal\Ui\Dashboard\GenericDashboard</a>, 
+			<a href="class-Charcoal.Ui.MenuItem.GenericMenuItem.html">Charcoal\Ui\MenuItem\GenericMenuItem</a>, 
+			<a href="class-Charcoal.Ui.Form.GenericForm.html">Charcoal\Ui\Form\GenericForm</a>, 
+			<a href="class-Charcoal.Ui.FormGroup.AbstractFormGroup.html">Charcoal\Ui\FormGroup\AbstractFormGroup</a>, 
+			<a href="class-Charcoal.Ui.FormGroup.GenericFormGroup.html">Charcoal\Ui\FormGroup\GenericFormGroup</a>, 
+			<a href="class-Charcoal.Ui.FormInput.AbstractFormInput.html">Charcoal\Ui\FormInput\AbstractFormInput</a>, 
+			<a href="class-Charcoal.Ui.FormInput.GenericFormInput.html">Charcoal\Ui\FormInput\GenericFormInput</a>, 
+			<a href="class-Charcoal.Ui.Menu.AbstractMenu.html">Charcoal\Ui\Menu\AbstractMenu</a>, 
+			<a href="class-Charcoal.Ui.Menu.GenericMenu.html">Charcoal\Ui\Menu\GenericMenu</a>, 
+			<a href="class-Charcoal.Ui.MenuItem.AbstractMenuItem.html">Charcoal\Ui\MenuItem\AbstractMenuItem</a>
+	</div>
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.UiItemInterface.html#11-152" title="Go to source code">Charcoal/Ui/UiItemInterface.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="active" id="_active">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_active">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#24-27" title="Go to source code">active</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTemplate" id="_setTemplate">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTemplate">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#29-33" title="Go to source code">setTemplate</a>( <span>string <var>$template</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$template</var></dt>
+					<dd>The UI item's template (identifier).</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="template" id="_template">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_template">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#35-38" title="Go to source code">template</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTitle" id="_setTitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#40-44" title="Go to source code">setTitle</a>( <span>mixed <var>$title</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$title</var></dt>
+					<dd>The group title.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="title" id="_title">
+
+		<td class="attributes"><code>
+			 public 
+
+			TranslationString
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_title">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#46-51" title="Go to source code">title</a>( )</code>
+
+		<div class="description short">
+			<p>Get the title. If unset, returns the label.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the title. If unset, returns the label.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					TranslationString
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setSubtitle" id="_setSubtitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setSubtitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#53-57" title="Go to source code">setSubtitle</a>( <span>mixed <var>$subtitle</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$subtitle</var></dt>
+					<dd>The group subtitle.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="subtitle" id="_subtitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			TranslationString
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_subtitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#59-62" title="Go to source code">subtitle</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					TranslationString
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDescription" id="_setDescription">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDescription">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#64-68" title="Go to source code">setDescription</a>( <span>mixed <var>$description</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$description</var></dt>
+					<dd>The group description.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="description" id="_description">
+
+		<td class="attributes"><code>
+			 public 
+
+			TranslationString
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_description">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#70-73" title="Go to source code">description</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					TranslationString
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setNotes" id="_setNotes">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setNotes">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#75-79" title="Go to source code">setNotes</a>( <span>mixed <var>$notes</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$notes</var></dt>
+					<dd>The group notes.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="notes" id="_notes">
+
+		<td class="attributes"><code>
+			 public 
+
+			TranslationString
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_notes">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#81-84" title="Go to source code">notes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					TranslationString
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowTitle" id="_setShowTitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowTitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#86-90" title="Go to source code">setShowTitle</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show title flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showTitle" id="_showTitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showTitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#92-95" title="Go to source code">showTitle</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowSubtitle" id="_setShowSubtitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowSubtitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#97-101" title="Go to source code">setShowSubtitle</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show subtitle flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showSubtitle" id="_showSubtitle">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showSubtitle">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#103-106" title="Go to source code">showSubtitle</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowDescription" id="_setShowDescription">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowDescription">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#108-112" title="Go to source code">setShowDescription</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show description flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showDescription" id="_showDescription">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showDescription">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#114-117" title="Go to source code">showDescription</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowNotes" id="_setShowNotes">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowNotes">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#119-123" title="Go to source code">setShowNotes</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show notes flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showNotes" id="_showNotes">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showNotes">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#125-129" title="Go to source code">showNotes</a>( )</code>
+
+		<div class="description short">
+			<p>Ensure there are are notes to show, if notes are to be shown.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Ensure there are are notes to show, if notes are to be shown.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowHeader" id="_setShowHeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowHeader">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#131-135" title="Go to source code">setShowHeader</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show header flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showHeader" id="_showHeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showHeader">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#137-140" title="Go to source code">showHeader</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setShowFooter" id="_setShowFooter">
+
+		<td class="attributes"><code>
+			 public 
+
+			FormGroup
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setShowFooter">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#142-146" title="Go to source code">setShowFooter</a>( <span>boolean <var>$show</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$show</var></dt>
+					<dd>The show footer flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					FormGroup<br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showFooter" id="_showFooter">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showFooter">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#148-151" title="Go to source code">showFooter</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
