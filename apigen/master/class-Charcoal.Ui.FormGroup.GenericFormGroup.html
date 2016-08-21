@@ -171,9 +171,9 @@ Charcoal\Config\AbstractEntity
 				<a href="class-Charcoal.Ui.Layout.LayoutAwareInterface.html"><span>Charcoal\Ui\Layout\LayoutAwareInterface</span></a>
 			
 			 uses 
-					<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html"><span>Charcoal\Ui\Layout\LayoutAwareTrait</span></a>, 
+					<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html"><span>Charcoal\Ui\FormGroup\FormGroupTrait</span></a>, 
 			
-					<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html"><span>Charcoal\Ui\FormGroup\FormGroupTrait</span></a>
+					<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html"><span>Charcoal\Ui\Layout\LayoutAwareTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:90px">
@@ -275,13 +275,16 @@ Charcoal\Config\AbstractEntity
 		<td><code>
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_active">active()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_addInput">addInput()</a>, 
+			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_form">form()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_hasInputs">hasInputs()</a>, 
+			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_ident">ident()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_inputs">inputs()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_l10nMode">l10nMode()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_numInputs">numInputs()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_priority">priority()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setActive">setActive()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setForm">setForm()</a>, 
+			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setIdent">setIdent()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setInputCallback">setInputCallback()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setInputs">setInputs()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupInterface.html#_setL10nMode">setL10nMode()</a>, 
@@ -320,16 +323,6 @@ Charcoal\Config\AbstractEntity
 	</table>
 
 	<table class="summary used">
-	<caption>Methods used from <a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#methods">Charcoal\Ui\Layout\LayoutAwareTrait</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_layout">layout()</a>, 
-			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_setLayout">setLayout()</a>, 
-			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_setLayoutBuilder">setLayoutBuilder()</a>
-		</code></td>
-	</tr>
-	</table>
-	<table class="summary used">
 	<caption>Methods used from <a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#methods">Charcoal\Ui\FormGroup\FormGroupTrait</a></caption>
 	<tr>
 		<td><code>
@@ -350,6 +343,16 @@ Charcoal\Config\AbstractEntity
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#_setInputs">setInputs()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#_setL10nMode">setL10nMode()</a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#_setPriority">setPriority()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#methods">Charcoal\Ui\Layout\LayoutAwareTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_layout">layout()</a>, 
+			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_setLayout">setLayout()</a>, 
+			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#_setLayoutBuilder">setLayoutBuilder()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -396,19 +399,19 @@ Charcoal\Config\AbstractEntity
 
 
 	<table class="summary used">
-	<caption>Properties used from <a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#properties">Charcoal\Ui\Layout\LayoutAwareTrait</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#$layoutBuilder"><var>$layoutBuilder</var></a>
-		</code></td>
-	</tr>
-	</table>
-	<table class="summary used">
 	<caption>Properties used from <a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#properties">Charcoal\Ui\FormGroup\FormGroupTrait</a></caption>
 	<tr>
 		<td><code>
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#$form"><var>$form</var></a>, 
 			<a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html#$formInputBuilder"><var>$formInputBuilder</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Properties used from <a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#properties">Charcoal\Ui\Layout\LayoutAwareTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html#$layoutBuilder"><var>$layoutBuilder</var></a>
 		</code></td>
 	</tr>
 	</table>

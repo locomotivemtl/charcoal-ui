@@ -85,11 +85,13 @@
 
 			<h3>Interfaces</h3>
 			<ul>
+				<li><a href="class-Charcoal.Ui.UiGroupingInterface.html">UiGroupingInterface</a></li>
 				<li class="active"><a href="class-Charcoal.Ui.UiItemInterface.html">UiItemInterface</a></li>
 			</ul>
 
 			<h3>Traits</h3>
 			<ul>
+				<li><a href="class-Charcoal.Ui.UiGroupingTrait.html">UiGroupingTrait</a></li>
 				<li><a href="class-Charcoal.Ui.UiItemTrait.html">UiItemTrait</a></li>
 			</ul>
 
@@ -156,7 +158,8 @@
 		<h4>Direct known implementers</h4>
 			<a href="class-Charcoal.Ui.AbstractUiItem.html">Charcoal\Ui\AbstractUiItem</a>, 
 			<a href="class-Charcoal.Ui.Dashboard.DashboardInterface.html">Charcoal\Ui\Dashboard\DashboardInterface</a>, 
-			<a href="class-Charcoal.Ui.Form.AbstractForm.html">Charcoal\Ui\Form\AbstractForm</a>
+			<a href="class-Charcoal.Ui.Form.AbstractForm.html">Charcoal\Ui\Form\AbstractForm</a>, 
+			<a href="class-Charcoal.Ui.UiGroupingInterface.html">Charcoal\Ui\UiGroupingInterface</a>
 	</div>
 
 	<div>
@@ -182,7 +185,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.UiItemInterface.html#11-152" title="Go to source code">Charcoal/Ui/UiItemInterface.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.UiItemInterface.html#11-162" title="Go to source code">Charcoal/Ui/UiItemInterface.php</a>
 		<br>
 	</div>
 
@@ -190,6 +193,45 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="setActive" id="_setActive">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setActive">#</a>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#24-30" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
+
+		<div class="description short">
+			<p>Set whether the item is active or not.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set whether the item is active or not.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$active</var></dt>
+					<dd>The active flag.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="active" id="_active">
 
 		<td class="attributes"><code>
@@ -202,14 +244,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_active">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#24-27" title="Go to source code">active</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#32-37" title="Go to source code">active</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the item is active or not.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the item is active or not.</p>
 
 
 
@@ -236,7 +278,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTemplate">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#29-33" title="Go to source code">setTemplate</a>( <span>string <var>$template</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#39-43" title="Go to source code">setTemplate</a>( <span>string <var>$template</var></span> )</code>
 
 		<div class="description short">
 			
@@ -275,7 +317,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_template">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#35-38" title="Go to source code">template</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#45-48" title="Go to source code">template</a>( )</code>
 
 		<div class="description short">
 			
@@ -309,7 +351,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#40-44" title="Go to source code">setTitle</a>( <span>mixed <var>$title</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#50-54" title="Go to source code">setTitle</a>( <span>mixed <var>$title</var></span> )</code>
 
 		<div class="description short">
 			
@@ -348,7 +390,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_title">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#46-51" title="Go to source code">title</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#56-61" title="Go to source code">title</a>( )</code>
 
 		<div class="description short">
 			<p>Get the title. If unset, returns the label.</p>
@@ -382,7 +424,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#53-57" title="Go to source code">setSubtitle</a>( <span>mixed <var>$subtitle</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#63-67" title="Go to source code">setSubtitle</a>( <span>mixed <var>$subtitle</var></span> )</code>
 
 		<div class="description short">
 			
@@ -421,7 +463,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_subtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#59-62" title="Go to source code">subtitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#69-72" title="Go to source code">subtitle</a>( )</code>
 
 		<div class="description short">
 			
@@ -455,7 +497,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#64-68" title="Go to source code">setDescription</a>( <span>mixed <var>$description</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#74-78" title="Go to source code">setDescription</a>( <span>mixed <var>$description</var></span> )</code>
 
 		<div class="description short">
 			
@@ -494,7 +536,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_description">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#70-73" title="Go to source code">description</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#80-83" title="Go to source code">description</a>( )</code>
 
 		<div class="description short">
 			
@@ -528,7 +570,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#75-79" title="Go to source code">setNotes</a>( <span>mixed <var>$notes</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#85-89" title="Go to source code">setNotes</a>( <span>mixed <var>$notes</var></span> )</code>
 
 		<div class="description short">
 			
@@ -567,7 +609,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_notes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#81-84" title="Go to source code">notes</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#91-94" title="Go to source code">notes</a>( )</code>
 
 		<div class="description short">
 			
@@ -601,7 +643,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#86-90" title="Go to source code">setShowTitle</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#96-100" title="Go to source code">setShowTitle</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -640,7 +682,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#92-95" title="Go to source code">showTitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#102-105" title="Go to source code">showTitle</a>( )</code>
 
 		<div class="description short">
 			
@@ -674,7 +716,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#97-101" title="Go to source code">setShowSubtitle</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#107-111" title="Go to source code">setShowSubtitle</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -713,7 +755,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#103-106" title="Go to source code">showSubtitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#113-116" title="Go to source code">showSubtitle</a>( )</code>
 
 		<div class="description short">
 			
@@ -747,7 +789,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#108-112" title="Go to source code">setShowDescription</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#118-122" title="Go to source code">setShowDescription</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -786,7 +828,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#114-117" title="Go to source code">showDescription</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#124-127" title="Go to source code">showDescription</a>( )</code>
 
 		<div class="description short">
 			
@@ -820,7 +862,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#119-123" title="Go to source code">setShowNotes</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#129-133" title="Go to source code">setShowNotes</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -859,7 +901,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#125-129" title="Go to source code">showNotes</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#135-139" title="Go to source code">showNotes</a>( )</code>
 
 		<div class="description short">
 			<p>Ensure there are are notes to show, if notes are to be shown.</p>
@@ -893,7 +935,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowHeader">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#131-135" title="Go to source code">setShowHeader</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#141-145" title="Go to source code">setShowHeader</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -932,7 +974,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showHeader">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#137-140" title="Go to source code">showHeader</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#147-150" title="Go to source code">showHeader</a>( )</code>
 
 		<div class="description short">
 			
@@ -966,7 +1008,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowFooter">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#142-146" title="Go to source code">setShowFooter</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#152-156" title="Go to source code">setShowFooter</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1005,7 +1047,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showFooter">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#148-151" title="Go to source code">showFooter</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#158-161" title="Go to source code">showFooter</a>( )</code>
 
 		<div class="description short">
 			

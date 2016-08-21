@@ -130,6 +130,7 @@
 				<li><a href="class-Charcoal.Ui.Layout.LayoutInterface.html">Charcoal\Ui\Layout\LayoutInterface</a></li>
 				<li><a href="class-Charcoal.Ui.Menu.MenuInterface.html">Charcoal\Ui\Menu\MenuInterface</a></li>
 				<li><a href="class-Charcoal.Ui.MenuItem.MenuItemInterface.html">Charcoal\Ui\MenuItem\MenuItemInterface</a></li>
+				<li><a href="class-Charcoal.Ui.UiGroupingInterface.html">Charcoal\Ui\UiGroupingInterface</a></li>
 				<li><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></li>
 			</ul>
 
@@ -140,6 +141,7 @@
 				<li><a href="class-Charcoal.Ui.FormGroup.FormGroupTrait.html">Charcoal\Ui\FormGroup\FormGroupTrait</a></li>
 				<li><a href="class-Charcoal.Ui.Layout.LayoutAwareTrait.html">Charcoal\Ui\Layout\LayoutAwareTrait</a></li>
 				<li><a href="class-Charcoal.Ui.Layout.LayoutTrait.html">Charcoal\Ui\Layout\LayoutTrait</a></li>
+				<li><a href="class-Charcoal.Ui.UiGroupingTrait.html">Charcoal\Ui\UiGroupingTrait</a></li>
 				<li><a href="class-Charcoal.Ui.UiItemTrait.html">Charcoal\Ui\UiItemTrait</a></li>
 			</ul>
 
@@ -193,27 +195,29 @@
 </span><span id="16" class="l"><a href="#16">16: </a>    FormGroupInterface,
 </span><span id="17" class="l"><a href="#17">17: </a>    LayoutAwareInterface
 </span><span id="18" class="l"><a href="#18">18: </a>{
-</span><span id="19" class="l"><a href="#19">19: </a>    <span class="php-keyword1">use</span> LayoutAwareTrait;
-</span><span id="20" class="l"><a href="#20">20: </a>    <span class="php-keyword1">use</span> FormGroupTrait;
+</span><span id="19" class="l"><a href="#19">19: </a>    <span class="php-keyword1">use</span> FormGroupTrait;
+</span><span id="20" class="l"><a href="#20">20: </a>    <span class="php-keyword1">use</span> LayoutAwareTrait;
 </span><span id="21" class="l"><a href="#21">21: </a>
 </span><span id="22" class="l"><a href="#22">22: </a>    <span class="php-comment">/**
-</span></span><span id="23" class="l"><a href="#23">23: </a><span class="php-comment">     * @param array|ArrayAccess $data The class depdendencies.
-</span></span><span id="24" class="l"><a href="#24">24: </a><span class="php-comment">     */</span>
-</span><span id="25" class="l"><a href="#25">25: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-var">$data</span>)
-</span><span id="26" class="l"><a href="#26">26: </a>    {
-</span><span id="27" class="l"><a href="#27">27: </a>        parent::__construct(<span class="php-var">$data</span>);
-</span><span id="28" class="l"><a href="#28">28: </a>
-</span><span id="29" class="l"><a href="#29">29: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'form'</span>])) {
-</span><span id="30" class="l"><a href="#30">30: </a>            <span class="php-var">$this</span>-&gt;setForm(<span class="php-var">$data</span>[<span class="php-quote">'form'</span>]);
-</span><span id="31" class="l"><a href="#31">31: </a>        }
-</span><span id="32" class="l"><a href="#32">32: </a>
-</span><span id="33" class="l"><a href="#33">33: </a>        <span class="php-var">$this</span>-&gt;setFormInputBuilder(<span class="php-var">$data</span>[<span class="php-quote">'form_input_builder'</span>]);
+</span></span><span id="23" class="l"><a href="#23">23: </a><span class="php-comment">     * Returns a new form group.
+</span></span><span id="24" class="l"><a href="#24">24: </a><span class="php-comment">     *
+</span></span><span id="25" class="l"><a href="#25">25: </a><span class="php-comment">     * @param array|ArrayAccess $data The class depdendencies.
+</span></span><span id="26" class="l"><a href="#26">26: </a><span class="php-comment">     */</span>
+</span><span id="27" class="l"><a href="#27">27: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-var">$data</span>)
+</span><span id="28" class="l"><a href="#28">28: </a>    {
+</span><span id="29" class="l"><a href="#29">29: </a>        parent::__construct(<span class="php-var">$data</span>);
+</span><span id="30" class="l"><a href="#30">30: </a>
+</span><span id="31" class="l"><a href="#31">31: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'form'</span>])) {
+</span><span id="32" class="l"><a href="#32">32: </a>            <span class="php-var">$this</span>-&gt;setForm(<span class="php-var">$data</span>[<span class="php-quote">'form'</span>]);
+</span><span id="33" class="l"><a href="#33">33: </a>        }
 </span><span id="34" class="l"><a href="#34">34: </a>
-</span><span id="35" class="l"><a href="#35">35: </a>        <span class="php-comment">// Set up layout builder (to fulfill LayoutAware Interface)</span>
-</span><span id="36" class="l"><a href="#36">36: </a>        <span class="php-var">$this</span>-&gt;setLayoutBuilder(<span class="php-var">$data</span>[<span class="php-quote">'layout_builder'</span>]);
-</span><span id="37" class="l"><a href="#37">37: </a>    }
-</span><span id="38" class="l"><a href="#38">38: </a>}
-</span><span id="39" class="l"><a href="#39">39: </a></span></code></pre>
+</span><span id="35" class="l"><a href="#35">35: </a>        <span class="php-var">$this</span>-&gt;setFormInputBuilder(<span class="php-var">$data</span>[<span class="php-quote">'form_input_builder'</span>]);
+</span><span id="36" class="l"><a href="#36">36: </a>
+</span><span id="37" class="l"><a href="#37">37: </a>        <span class="php-comment">// Set up layout builder (to fulfill LayoutAware Interface)</span>
+</span><span id="38" class="l"><a href="#38">38: </a>        <span class="php-var">$this</span>-&gt;setLayoutBuilder(<span class="php-var">$data</span>[<span class="php-quote">'layout_builder'</span>]);
+</span><span id="39" class="l"><a href="#39">39: </a>    }
+</span><span id="40" class="l"><a href="#40">40: </a>}
+</span><span id="41" class="l"><a href="#41">41: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -221,6 +225,6 @@
 </div>
 </div>
 <script src="resources/combined.js?18e1051cf6a844c0edb08aea8668c52cab3f2b63"></script>
-<script src="elementlist.js?9eec2b98623f3cf4b5d8a89dd744e55715c91afa"></script>
+<script src="elementlist.js?ca593105403ca92abc696e32ef84b562a96ceb81"></script>
 </body>
 </html>
