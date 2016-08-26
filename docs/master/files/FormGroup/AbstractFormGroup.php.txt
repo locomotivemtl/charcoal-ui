@@ -20,6 +20,11 @@ abstract class AbstractFormGroup extends AbstractUiItem implements
     use LayoutAwareTrait;
 
     /**
+     * @var boolean $active
+     */
+    private $active = true;
+
+    /**
      * Returns a new form group.
      *
      * @param array|ArrayAccess $data The class depdendencies.
@@ -36,6 +41,24 @@ abstract class AbstractFormGroup extends AbstractUiItem implements
 
         // Set up layout builder (to fulfill LayoutAware Interface)
         $this->setLayoutBuilder($data['layout_builder']);
+    }
+
+    /**
+     * @param string $active The item active flag.
+     * @return AbstractFormGroup Chainable
+     */
+    public function setActive($active)
+    {
+        $this->active = !!$active;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function active()
+    {
+        return $this->active;
     }
 }
 

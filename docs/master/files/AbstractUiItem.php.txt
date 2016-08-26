@@ -38,6 +38,11 @@ abstract class AbstractUiItem extends AbstractEntity implements
     use UiItemTrait;
 
     /**
+     * @var boolean $active
+     */
+    private $active = true;
+
+    /**
      * @param array $data Constructor options.
      */
     public function __construct(array $data = null)
@@ -61,6 +66,24 @@ abstract class AbstractUiItem extends AbstractEntity implements
     public function setDependencies(Container $container)
     {
         // This method is a stub. Reimplement in children template classes.
+    }
+
+    /**
+     * @param string $active The item active flag.
+     * @return AbstractUiItem Chainable
+     */
+    public function setActive($active)
+    {
+        $this->active = !!$active;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function active()
+    {
+        return $this->active;
     }
 }
 
