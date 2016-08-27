@@ -85,7 +85,6 @@
 				<li><a href="class-Charcoal.Ui.Dashboard.DashboardConfig.html">DashboardConfig</a></li>
 				<li><a href="class-Charcoal.Ui.Dashboard.FormInputConfig.html">FormInputConfig</a></li>
 				<li><a href="class-Charcoal.Ui.Dashboard.GenericDashboard.html">GenericDashboard</a></li>
-				<li><a href="class-Charcoal.Ui.Dashboard.UiItemConfig.html">UiItemConfig</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -136,7 +135,7 @@
 
 
 	<div class="description">
-	<p>Full implementation of the Dashboard Interface, as abstract class.</p>
+	<p>Provides an implementation of <code><a href="class-Charcoal.Ui.Dashboard.DashboardInterface.html">Charcoal\Ui\Dashboard\DashboardInterface</a></code>.</p>
 	</div>
 
 
@@ -161,7 +160,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a>\<a href="namespace-Charcoal.Ui.Dashboard.html">Dashboard</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#10-147" title="Go to source code">Charcoal/Ui/Dashboard/DashboardTrait.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#10-204" title="Go to source code">Charcoal/Ui/Dashboard/DashboardTrait.php</a>
 		<br>
 	</div>
 
@@ -181,14 +180,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setWidgetBuilder">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#30-38" title="Go to source code">setWidgetBuilder</a>( <span>mixed <var>$builder</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#36-57" title="Go to source code">setWidgetBuilder</a>( <span>object <var>$builder</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set a widget builder.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set a widget builder.</p>
 
 
 				<h4>Parameters</h4>
@@ -202,6 +201,10 @@
 					<code><a href="class-Charcoal.Ui.Dashboard.DashboardInterface.html">Charcoal\Ui\Dashboard\DashboardInterface</a></code><br>Chainable
 				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the argument is not a widget builder.
+				</div>
 
 
 
@@ -220,20 +223,21 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setWidgetCallback">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#40-48" title="Go to source code">setWidgetCallback</a>( <span>callable <var>$cb</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#59-87" title="Go to source code">setWidgetCallback</a>( <span>callable|null <var>$callable</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set a callback to be applied to each widget output by <a href="self::widgets()">self::widgets()</a>.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set a callback to be applied to each widget output by <a href="self::widgets()">self::widgets()</a>.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$cb</var></dt>
-					<dd>The widget callback.</dd>
+					<dt><var>$callable</var></dt>
+					<dd><p>A callback to be applied to each widget
+    or NULL to disable the callback.</p></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -241,6 +245,10 @@
 					<code><a href="class-Charcoal.Ui.Dashboard.DashboardInterface.html">Charcoal\Ui\Dashboard\DashboardInterface</a></code><br>Chainable
 				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the argument is not callable or NULL.
+				</div>
 
 
 
@@ -259,20 +267,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#50-61" title="Go to source code">setWidgets</a>( <span>array <var>$widgets</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#89-104" title="Go to source code">setWidgets</a>( <span>array <var>$widgets</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the dashboard's widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the dashboard's widgets.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$widgets</var></dt>
-					<dd>The widgets.</dd>
+					<dd>A collection of widgets.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -298,14 +306,16 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addWidget">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#63-91" title="Go to source code">addWidget</a>( <span>string <var>$widgetIdent</var></span>, <span>WidgetInterface|array <var>$widget</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#106-141" title="Go to source code">addWidget</a>( <span>string <var>$widgetIdent</var></span>, <span><code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>|array <var>$widget</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Add a widget to the dashboard.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Add a widget to the dashboard.</p>
+
+<p>If a widget with the same $widgetIdent already exists, it will be overridden.</p>
 
 
 				<h4>Parameters</h4>
@@ -323,7 +333,7 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					InvalidArgumentException<br>If the argument is not a widget object or structure.
+					InvalidArgumentException<br>If the widget is invalid.
 				</div>
 
 
@@ -336,32 +346,32 @@
 		<td class="attributes"><code>
 			 public 
 
-			WidgetInterface[]|Generator
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a>[]</code>|Generator
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_widgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#93-115" title="Go to source code">widgets</a>( <span>callable <var>$widgetCallback</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#143-168" title="Go to source code">widgets</a>( <span>callable <var>$widgetCallback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
-			<p>Widgets generator.</p>
+			<p>Retrieve the dashboard's widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Widgets generator.</p>
+			<p>Retrieve the dashboard's widgets.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$widgetCallback</var></dt>
-					<dd>Widget callback.</dd>
+					<dd>A callback applied to each widget.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					WidgetInterface[]|Generator
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a>[]</code>|Generator
 				</div>
 
 
@@ -382,14 +392,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#117-123" title="Go to source code">hasWidgets</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#170-178" title="Go to source code">hasWidgets</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the dashboard has any widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the dashboard has any widgets.</p>
 
 
 
@@ -416,14 +426,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_numWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#125-131" title="Go to source code">numWidgets</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#180-188" title="Go to source code">numWidgets</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Count the number of widgets attached to the dashboard.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Count the number of widgets attached to the dashboard.</p>
 
 
 
@@ -450,27 +460,27 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_sortWidgetsByPriority">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#133-146" title="Go to source code">sortWidgetsByPriority</a>( <span>mixed <var>$a</var></span>, <span>mixed <var>$b</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#190-203" title="Go to source code">sortWidgetsByPriority</a>( <span>mixed <var>$a</var></span>, <span>mixed <var>$b</var></span> )</code>
 
 		<div class="description short">
-			<p>To be called with uasort()</p>
+			<p>Static comparison function used by uasort().</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>To be called with uasort()</p>
+			<p>Static comparison function used by uasort().</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$a</var></dt>
-					<dd>Widget a.</dd>
+					<dd>Widget A.</dd>
 					<dt><var>$b</var></dt>
-					<dd>Widget b.</dd>
+					<dd>Widget B.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					integer<br>Sorting value: -1, 0, or 1
+					integer<br>Sorting value: -1 or 1
 				</div>
 
 
@@ -497,25 +507,25 @@
 	<tr data-order="widgetBuilder" id="$widgetBuilder">
 		<td class="attributes"><code>
 			protected  
-			mixed
+			object
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#20-23" title="Go to source code"><var>$widgetBuilder</var></a>
+				<a href="source-class-Charcoal.Ui.Dashboard.DashboardTrait.html#22-27" title="Go to source code"><var>$widgetBuilder</var></a>
 
 			<div class="description short">
-				<p>$widgetBuilder</p>
+				<p>Store a widget builder instance.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>$widgetBuilder</p>
+				<p>Store a widget builder instance.</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
 				<a href="#$widgetBuilder" class="anchor">#</a>
-				<code><span class="php-keyword1">null</span></code>
+				<code></code>
 			</div>
 		</td>
 	</tr>

@@ -85,7 +85,6 @@
 				<li><a href="class-Charcoal.Ui.Dashboard.DashboardConfig.html">DashboardConfig</a></li>
 				<li><a href="class-Charcoal.Ui.Dashboard.FormInputConfig.html">FormInputConfig</a></li>
 				<li><a href="class-Charcoal.Ui.Dashboard.GenericDashboard.html">GenericDashboard</a></li>
-				<li><a href="class-Charcoal.Ui.Dashboard.UiItemConfig.html">UiItemConfig</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -136,7 +135,7 @@
 
 
 	<div class="description">
-	<p>Dashboard Interface.</p>
+	<p>Defines a dashboard.</p>
 
 <p>Dashboards are simply a collection of <em>widgets</em>, in a <em>layout</em>.</p>
 
@@ -179,7 +178,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a>\<a href="namespace-Charcoal.Ui.Dashboard.html">Dashboard</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#8-47" title="Go to source code">Charcoal/Ui/Dashboard/DashboardInterface.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#9-56" title="Go to source code">Charcoal/Ui/Dashboard/DashboardInterface.php</a>
 		<br>
 	</div>
 
@@ -199,20 +198,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#18-22" title="Go to source code">setWidgets</a>( <span>array <var>$widgets</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#19-25" title="Go to source code">setWidgets</a>( <span>array <var>$widgets</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the dashboard's widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the dashboard's widgets.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$widgets</var></dt>
-					<dd>The widgets.</dd>
+					<dd>A collection of widgets.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -238,14 +237,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addWidget">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#24-29" title="Go to source code">addWidget</a>( <span>string <var>$widgetIdent</var></span>, <span>WidgetInterface|array <var>$widget</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#27-34" title="Go to source code">addWidget</a>( <span>string <var>$widgetIdent</var></span>, <span><code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>|array <var>$widget</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Add a widget to the dashboard.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Add a widget to the dashboard.</p>
 
 
 				<h4>Parameters</h4>
@@ -272,27 +271,27 @@
 		<td class="attributes"><code>
 			 public 
 
-			
+			<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a>[]</code>|Generator
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_widgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#31-36" title="Go to source code">widgets</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#36-41" title="Go to source code">widgets</a>( )</code>
 
 		<div class="description short">
-			<p>Widgets generator</p>
+			<p>Retrieve the dashboard's widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Widgets generator</p>
+			<p>Retrieve the dashboard's widgets.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<br>This method is a <code>WidgetInterface</code> generator.
+					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a>[]</code>|Generator
 				</div>
 
 
@@ -313,14 +312,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#38-41" title="Go to source code">hasWidgets</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#43-48" title="Go to source code">hasWidgets</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the dashboard has any widgets.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the dashboard has any widgets.</p>
 
 
 
@@ -347,14 +346,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_numWidgets">#</a>
-		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#43-46" title="Go to source code">numWidgets</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.Dashboard.DashboardInterface.html#50-55" title="Go to source code">numWidgets</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Count the number of widgets attached to the dashboard.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Count the number of widgets attached to the dashboard.</p>
 
 
 
@@ -390,6 +389,7 @@
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_setSubtitle">setSubtitle()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_setTemplate">setTemplate()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_setTitle">setTitle()</a>, 
+			<a href="class-Charcoal.Ui.UiItemInterface.html#_setType">setType()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_showDescription">showDescription()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_showFooter">showFooter()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_showHeader">showHeader()</a>, 
@@ -398,7 +398,8 @@
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_showTitle">showTitle()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_subtitle">subtitle()</a>, 
 			<a href="class-Charcoal.Ui.UiItemInterface.html#_template">template()</a>, 
-			<a href="class-Charcoal.Ui.UiItemInterface.html#_title">title()</a>
+			<a href="class-Charcoal.Ui.UiItemInterface.html#_title">title()</a>, 
+			<a href="class-Charcoal.Ui.UiItemInterface.html#_type">type()</a>
 		</code></td>
 	</tr>
 	</table>

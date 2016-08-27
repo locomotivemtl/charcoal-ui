@@ -81,6 +81,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Charcoal.Ui.AbstractUiItem.html">AbstractUiItem</a></li>
+				<li><a href="class-Charcoal.Ui.UiItemConfig.html">UiItemConfig</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -133,7 +134,7 @@
 
 
 	<div class="description">
-	<p>Ui Item Trait</p>
+	<p>Provides an implementation of <code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code>.</p>
 	</div>
 
 
@@ -169,7 +170,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.UiItemTrait.html#13-346" title="Go to source code">Charcoal/Ui/UiItemTrait.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.UiItemTrait.html#10-434" title="Go to source code">Charcoal/Ui/UiItemTrait.php</a>
 		<br>
 	</div>
 
@@ -189,14 +190,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setType">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#82-90" title="Go to source code">setType</a>( <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#99-117" title="Go to source code">setType</a>( <span>string|null <var>$type</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the UI item type.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the UI item type.</p>
 
 
 				<h4>Parameters</h4>
@@ -210,6 +211,10 @@
 					<code><a href="class-Charcoal.Ui.UiItemInterface.html">Charcoal\Ui\UiItemInterface</a></code><br>Chainable
 				</div>
 
+				<h4>Throws</h4>
+				<div class="list">
+					InvalidArgumentException<br>If the type is not a string.
+				</div>
 
 
 
@@ -228,14 +233,14 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_type">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#92-98" title="Go to source code">type</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#119-127" title="Go to source code">type</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieve the UI item type.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieve the UI item type.</p>
 
 
 
@@ -262,20 +267,22 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTemplate">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#100-114" title="Go to source code">setTemplate</a>( <span>string <var>$template</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#129-149" title="Go to source code">setTemplate</a>( <span>string <var>$template</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the UI item's template.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the UI item's template.</p>
+
+<p>Usually, a path to a file containing the template to be rendered.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$template</var></dt>
-					<dd>The UI item's template (identifier).</dd>
+					<dd>A template (identifier).</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -285,7 +292,7 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					InvalidArgumentException<br>If the template identifier is not a string.
+					InvalidArgumentException<br>If the template is not a string.
 				</div>
 
 
@@ -305,20 +312,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_template">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#116-125" title="Go to source code">template</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#151-163" title="Go to source code">template</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieve the UI item's template.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieve the UI item's template.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					string
+					string<br>If unset, returns the UI item type.
 				</div>
 
 
@@ -339,20 +346,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#127-138" title="Go to source code">setTitle</a>( <span>mixed <var>$title</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#165-180" title="Go to source code">setTitle</a>( <span>mixed <var>$title</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the UI item's title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the UI item's title.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$title</var></dt>
-					<dd>The group title.</dd>
+					<dd>A title.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -371,27 +378,27 @@
 		<td class="attributes"><code>
 			 public 
 
-			Charcoal\Translation\TranslationString
+			Charcoal\Translation\TranslationString|string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_title">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#140-148" title="Go to source code">title</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#182-190" title="Go to source code">title</a>( )</code>
 
 		<div class="description short">
-			<p>Get the title.</p>
+			<p>Retrieve the title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Get the title.</p>
+			<p>Retrieve the title.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					Charcoal\Translation\TranslationString
+					Charcoal\Translation\TranslationString|string|null
 				</div>
 
 
@@ -412,20 +419,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#150-161" title="Go to source code">setSubtitle</a>( <span>mixed <var>$subtitle</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#192-207" title="Go to source code">setSubtitle</a>( <span>mixed <var>$subtitle</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the UI item's sub-title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the UI item's sub-title.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$subtitle</var></dt>
-					<dd>The group subtitle.</dd>
+					<dd>A sub-title.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -444,27 +451,27 @@
 		<td class="attributes"><code>
 			 public 
 
-			Charcoal\Translation\TranslationString
+			Charcoal\Translation\TranslationString|string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_subtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#163-169" title="Go to source code">subtitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#209-217" title="Go to source code">subtitle</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieve the sub-title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieve the sub-title.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					Charcoal\Translation\TranslationString
+					Charcoal\Translation\TranslationString|string|null
 				</div>
 
 
@@ -485,20 +492,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#171-182" title="Go to source code">setDescription</a>( <span>mixed <var>$description</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#219-234" title="Go to source code">setDescription</a>( <span>mixed <var>$description</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set the UI item's description.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set the UI item's description.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$description</var></dt>
-					<dd>The group description.</dd>
+					<dd>A description.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -517,27 +524,27 @@
 		<td class="attributes"><code>
 			 public 
 
-			Charcoal\Translation\TranslationString
+			Charcoal\Translation\TranslationString|string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_description">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#184-190" title="Go to source code">description</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#236-244" title="Go to source code">description</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieve the description.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieve the description.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					Charcoal\Translation\TranslationString
+					Charcoal\Translation\TranslationString|string|null
 				</div>
 
 
@@ -558,20 +565,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#192-203" title="Go to source code">setNotes</a>( <span>mixed <var>$notes</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#246-261" title="Go to source code">setNotes</a>( <span>mixed <var>$notes</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Set notes about the UI item.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Set notes about the UI item.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$notes</var></dt>
-					<dd>The group notes.</dd>
+					<dd>Notes.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -590,27 +597,27 @@
 		<td class="attributes"><code>
 			 public 
 
-			Charcoal\Translation\TranslationString
+			Charcoal\Translation\TranslationString|string|null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_notes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#205-211" title="Go to source code">notes</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#263-271" title="Go to source code">notes</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Retrieve the notes.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Retrieve the notes.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					Charcoal\Translation\TranslationString
+					Charcoal\Translation\TranslationString|string|null
 				</div>
 
 
@@ -631,20 +638,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#213-221" title="Go to source code">setShowTitle</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#273-284" title="Go to source code">setShowTitle</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's title.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show title flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the title.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -670,20 +677,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showTitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#223-233" title="Go to source code">showTitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#286-298" title="Go to source code">showTitle</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the title is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the title is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there is a title.
 				</div>
 
 
@@ -704,20 +711,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#235-243" title="Go to source code">setShowSubtitle</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#300-311" title="Go to source code">setShowSubtitle</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's sub-title.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's sub-title.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show subtitle flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the sub-title.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -743,20 +750,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showSubtitle">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#245-255" title="Go to source code">showSubtitle</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#313-325" title="Go to source code">showSubtitle</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the sub-title is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the sub-title is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there is a sub-title.
 				</div>
 
 
@@ -777,20 +784,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#257-265" title="Go to source code">setShowDescription</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#327-338" title="Go to source code">setShowDescription</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's description.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's description.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show description flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the description.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -816,20 +823,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showDescription">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#267-277" title="Go to source code">showDescription</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#340-352" title="Go to source code">showDescription</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the description is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the description is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there is a description.
 				</div>
 
 
@@ -850,20 +857,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#279-287" title="Go to source code">setShowNotes</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#354-365" title="Go to source code">setShowNotes</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's notes.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's notes.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show notes flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the notes.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -889,20 +896,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showNotes">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#289-301" title="Go to source code">showNotes</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#367-379" title="Go to source code">showNotes</a>( )</code>
 
 		<div class="description short">
-			<p>Ensure there are are notes to show, if notes are to be shown.</p>
+			<p>Determine if the notes is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Ensure there are are notes to show, if notes are to be shown.</p>
+			<p>Determine if the notes is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there are notes.
 				</div>
 
 
@@ -923,20 +930,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowHeader">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#303-311" title="Go to source code">setShowHeader</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#381-392" title="Go to source code">setShowHeader</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's header.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's header.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show header flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the header.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -962,20 +969,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showHeader">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#313-323" title="Go to source code">showHeader</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#394-406" title="Go to source code">showHeader</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the header is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the header is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there is a title.
 				</div>
 
 
@@ -996,20 +1003,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setShowFooter">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#325-333" title="Go to source code">setShowFooter</a>( <span>boolean <var>$show</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#408-419" title="Go to source code">setShowFooter</a>( <span>boolean <var>$show</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Show/hide the UI item's footer.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Show/hide the UI item's footer.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$show</var></dt>
-					<dd>The show footer flag.</dd>
+					<dd>Show (TRUE) or hide (FALSE) the footer.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -1035,20 +1042,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_showFooter">#</a>
-		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#335-345" title="Go to source code">showFooter</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.UiItemTrait.html#421-433" title="Go to source code">showFooter</a>( )</code>
 
 		<div class="description short">
-			
+			<p>Determine if the footer is to be displayed.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Determine if the footer is to be displayed.</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					boolean
+					boolean<br>If TRUE or unset, check if there are notes.
 				</div>
 
 

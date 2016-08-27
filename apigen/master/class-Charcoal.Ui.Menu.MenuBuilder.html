@@ -130,6 +130,9 @@
 	<h1>Class MenuBuilder</h1>
 
 
+	<div class="description">
+	<p>Menu Builder</p>
+	</div>
 
 
 
@@ -145,7 +148,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a>\<a href="namespace-Charcoal.Ui.Menu.html">Menu</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#9-54" title="Go to source code">Charcoal/Ui/Menu/MenuBuilder.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#10-68" title="Go to source code">Charcoal/Ui/Menu/MenuBuilder.php</a>
 		<br>
 	</div>
 
@@ -165,20 +168,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#27-35" title="Go to source code">__construct</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span>, <span>Pimple\Container <var>$container</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#36-46" title="Go to source code">__construct</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span>, <span>Pimple\Container <var>$container</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Return a new menu builder.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Return a new menu builder.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$factory</var></dt>
-					<dd>An object factory.</dd>
+					<dd>A menu factory.</dd>
 					<dt><var>$container</var></dt>
 					<dd>The DI container.</dd>
 				</dl></div>
@@ -202,20 +205,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_build">#</a>
-		<code><a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#37-53" title="Go to source code">build</a>( <span>array|ArrayAccess <var>$options</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#48-67" title="Go to source code">build</a>( <span>array|ArrayAccess <var>$options</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Build and return a new menu.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Build and return a new menu.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$options</var></dt>
-					<dd>The form group build options / config.</dd>
+					<dd>The menu build options.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -245,16 +248,20 @@
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#14" title="Go to source code"><b>DEFAULT_TYPE</b></a>
+				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#15-20" title="Go to source code"><b>DEFAULT_TYPE</b></a>
 			</code>
 
 			<div class="description short">
-				
+				<p>The default, concrete, menu model.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>The default, concrete, menu model.</p>
 
+					<h4>Const</h4>
+					<div class="list">
+							string<br>
+					</div>
 			</div>
 		</td>
 		<td class="value">
@@ -278,14 +285,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#16-19" title="Go to source code"><var>$factory</var></a>
+				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#22-27" title="Go to source code"><var>$factory</var></a>
 
 			<div class="description short">
-				<p>$factory</p>
+				<p>Store the menu factory instance.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>$factory</p>
+				<p>Store the menu factory instance.</p>
 
 			</div>
 		</td>
@@ -303,14 +310,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#21-25" title="Go to source code"><var>$container</var></a>
+				<a href="source-class-Charcoal.Ui.Menu.MenuBuilder.html#29-34" title="Go to source code"><var>$container</var></a>
 
 			<div class="description short">
-				<p>A Pimple dependency-injection container</p>
+				<p>Store the dependency-injection container to fulfill the required services.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>A Pimple dependency-injection container</p>
+				<p>Store the dependency-injection container to fulfill the required services.</p>
 
 			</div>
 		</td>

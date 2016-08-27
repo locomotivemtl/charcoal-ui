@@ -128,6 +128,9 @@
 	<h1>Class FormInputBuilder</h1>
 
 
+	<div class="description">
+	<p>Form Input Builder</p>
+	</div>
 
 
 
@@ -143,7 +146,7 @@
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a>\<a href="namespace-Charcoal.Ui.FormInput.html">FormInput</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#9-53" title="Go to source code">Charcoal/Ui/FormInput/FormInputBuilder.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#10-67" title="Go to source code">Charcoal/Ui/FormInput/FormInputBuilder.php</a>
 		<br>
 	</div>
 
@@ -163,20 +166,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#27-35" title="Go to source code">__construct</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span>, <span>Pimple\Container <var>$container</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#36-46" title="Go to source code">__construct</a>( <span>Charcoal\Factory\FactoryInterface <var>$factory</var></span>, <span>Pimple\Container <var>$container</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Return a new form input builder.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Return a new form input builder.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$factory</var></dt>
-					<dd>An object factory.</dd>
+					<dd>A dashboard factory.</dd>
 					<dt><var>$container</var></dt>
 					<dd>The DI container.</dd>
 				</dl></div>
@@ -200,20 +203,20 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_build">#</a>
-		<code><a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#37-52" title="Go to source code">build</a>( <span>array|ArrayAccess <var>$options</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#48-66" title="Go to source code">build</a>( <span>array|ArrayAccess <var>$options</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>Build and return a new form input.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>Build and return a new form input.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$options</var></dt>
-					<dd>The form group build options / config.</dd>
+					<dd>The form input build options.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -243,16 +246,20 @@
 		<td class="attributes"><code>string</code></td>
 		<td class="name">
 			<code>
-				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#14" title="Go to source code"><b>DEFAULT_TYPE</b></a>
+				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#15-20" title="Go to source code"><b>DEFAULT_TYPE</b></a>
 			</code>
 
 			<div class="description short">
-				
+				<p>The default, concrete, form input model.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>The default, concrete, form input model.</p>
 
+					<h4>Const</h4>
+					<div class="list">
+							string<br>
+					</div>
 			</div>
 		</td>
 		<td class="value">
@@ -276,14 +283,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#16-19" title="Go to source code"><var>$factory</var></a>
+				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#22-27" title="Go to source code"><var>$factory</var></a>
 
 			<div class="description short">
-				<p>$factory</p>
+				<p>Store the form input factory instance.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>$factory</p>
+				<p>Store the form input factory instance.</p>
 
 			</div>
 		</td>
@@ -301,14 +308,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#21-25" title="Go to source code"><var>$container</var></a>
+				<a href="source-class-Charcoal.Ui.FormInput.FormInputBuilder.html#29-34" title="Go to source code"><var>$container</var></a>
 
 			<div class="description short">
-				<p>A Pimple dependency-injection container</p>
+				<p>Store the dependency-injection container to fulfill the required services.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>A Pimple dependency-injection container</p>
+				<p>Store the dependency-injection container to fulfill the required services.</p>
 
 			</div>
 		</td>
