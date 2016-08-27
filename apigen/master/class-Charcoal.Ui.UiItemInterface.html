@@ -133,10 +133,12 @@
 
 
 	<div class="description">
-	<p>Basic UI Item Interface.</p>
+	<p>Defines a UI Item</p>
 
-<p>-Also implements Entity Interface. - for <code>ArrayAccess</code>, <code>Serializable</code> and <code>JsonSerializable</code>. - also add <code>keys()</code>, <code>data()</code>, <code>keys</code>, <code>delegates</code> and <code>separator</code>) methods.
--Also implements Viewable Interface. - add a required <code>view</code> dependency. Typically provided from DI container <code>['view']</code>. - also add <code>template_ident</code> property.</p>
+<ul>
+<li>Also implements the Entity Interface. - for <code>ArrayAccess</code>, <code>Serializable</code> and <code>JsonSerializable</code>. - also add <code>keys()</code>, <code>data()</code>, <code>keys</code>, <code>delegates</code> and <code>separator</code>) methods.</li>
+<li>Also implements the Viewable Interface. - add a required <code>view</code> dependency. Typically provided from DI container <code>['view']</code>. - also add <code>template_ident</code> property.</li>
+</ul>
 	</div>
 
 	<dl class="tree">
@@ -208,17 +210,17 @@
 		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#24-30" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
 
 		<div class="description short">
-			<p>Set whether the item is active or not.</p>
+			<p>Activates/deactivates the item.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Set whether the item is active or not.</p>
+			<p>Activates/deactivates the item.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$active</var></dt>
-					<dd>The active flag.</dd>
+					<dd>Activate (TRUE) or deactivate (FALSE) the item.</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -247,11 +249,11 @@
 		<code><a href="source-class-Charcoal.Ui.UiItemInterface.html#32-37" title="Go to source code">active</a>( )</code>
 
 		<div class="description short">
-			<p>Determine if the item is active or not.</p>
+			<p>Determine if the item is active.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Determine if the item is active or not.</p>
+			<p>Determine if the item is active.</p>
 
 
 
