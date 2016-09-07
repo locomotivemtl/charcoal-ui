@@ -414,7 +414,7 @@
 </span><span id="235" class="l"><a href="#235">235: </a>            <span class="php-var">$g</span>-&gt;setData(<span class="php-var">$group</span>);
 </span><span id="236" class="l"><a href="#236">236: </a>            <span class="php-var">$this</span>-&gt;groups[<span class="php-var">$groupIdent</span>] = <span class="php-var">$g</span>;
 </span><span id="237" class="l"><a href="#237">237: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$group</span> === <span class="php-keyword1">false</span> || <span class="php-var">$group</span> === <span class="php-keyword1">null</span>) {
-</span><span id="238" class="l"><a href="#238">238: </a>            <span class="php-keyword1">continue</span>;
+</span><span id="238" class="l"><a href="#238">238: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="239" class="l"><a href="#239">239: </a>        } <span class="php-keyword1">else</span> {
 </span><span id="240" class="l"><a href="#240">240: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
 </span><span id="241" class="l"><a href="#241">241: </a>                <span class="php-keyword2">sprintf</span>(
