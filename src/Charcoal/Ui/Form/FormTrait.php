@@ -2,22 +2,21 @@
 
 namespace Charcoal\Ui\Form;
 
-use \Exception;
 use \InvalidArgumentException;
 
 // From 'charcoal-factory'
 use \Charcoal\Factory\FactoryInterface;
 
-// Intra-module (`charcoal-ui`) dependencies
-use \Charcoal\Ui\FormGroup\FormGroupInterface;
+// From 'charcoal-ui'
+use \Charcoal\Ui\Form\FormInterface;
 
 /**
- * Provides an implementation of {@see \Charcoal\Ui\Dashboard\DashboardInterface}.
+ * Provides an implementation of {@see \Charcoal\Ui\Form\FormInterface}.
  */
 trait FormTrait
 {
     /**
-     * The URI of a program that processes the form information.
+     * The program that processes the form information.
      *
      * @var string
      */
@@ -28,33 +27,22 @@ trait FormTrait
      *
      * @var string
      */
-    private $method = 'post';
+    private $method = FormInterface::HTTP_METHOD_POST;
 
     /**
-     * The form's display mode for multilingual fields.
+     * Valid HTTP methods for a form.
      *
-     * @var string
+     * @var string[]
      */
-    private $l10nMode = 'loop_inputs';
-
-    /**
-     * The form's display mode for groups.
-     *
-     * @var string
-     */
-    protected $groupDisplayMode;
-
-    /**
-     * The form's field groups.
-     *
-     * @var FormGroupInterface[]
-     */
-    protected $groups = [];
+    protected $validMethods = [
+        FormInterface::HTTP_METHOD_POST => 1,
+        FormInterface::HTTP_METHOD_GET  => 1,
+    ];
 
     /**
      * The form's predefined data.
      *
-     * @var array $formData
+     * @var array
      */
     private $formData = [];
 
@@ -66,74 +54,34 @@ trait FormTrait
     private $metadata;
 
     /**
-     * Store the form's group factory instance.
+     * Set the program that processes the form information.
      *
-     * @var FactoryInterface
-     */
-    protected $formGroupFactory;
-
-    /**
-     * Store the form's group callback.
-     *
-     * @var callable
-     */
-    private $groupCallback;
-
-    /**
-     * @param FactoryInterface $factory A factory, to create customized form gorup objects.
-     * @return FormInterface Chainable
-     */
-    public function setFormGroupFactory(FactoryInterface $factory)
-    {
-        $this->formGroupFactory = $factory;
-
-        return $this;
-    }
-
-    /**
-     * @throws Exception If the form group factory object was not set / injected.
-     * @return FormInterface Chainable
-     */
-    protected function formGroupFactory()
-    {
-        if ($this->formGroupFactory === null) {
-            throw new Exception(
-                'Form group factory was not set.'
-            );
-        }
-
-        return $this->formGroupFactory;
-    }
-
-    /**
-     * @param callable $cb The group callback.
-     * @return FormInterface Chainable
-     */
-    public function setGroupCallback(callable $cb)
-    {
-        $this->groupCallback = $cb;
-
-        return $this;
-    }
-
-    /**
-     * @param string $action The "action" value, typically a URL.
+     * @param  string $action The form action, typically a URI.
      * @throws InvalidArgumentException If the action argument is not a string.
      * @return FormInterface Chainable
      */
     public function setAction($action)
     {
-        if (!is_string($action)) {
-            throw new InvalidArgumentException(
-                'Action must be a string'
-            );
+        if ($action === null || $action === '') {
+            $this->action = '';
+            return $this;
         }
+
+        if (!is_string($action)) {
+            throw new InvalidArgumentException(sprintf(
+                'The form action must be a string, received %s',
+                (is_object($action) ? get_class($action) : gettype($action))
+            ));
+        }
+
         $this->action = $action;
 
         return $this;
     }
 
     /**
+     * Retrieve the program that processes the form information.
+     *
      * @return string
      */
     public function action()
@@ -142,27 +90,58 @@ trait FormTrait
     }
 
     /**
-     * Set the method (forcing lowercase) to "post" or "get".
+     * Set the HTTP method used to submit the form.
      *
-     * @param string $method Either "post" or "get".
-     * @throws InvalidArgumentException If the method is not post or get.
+     * Possible values are:
+     * - {@see FormInterface::HTTP_METHOD_POST `post`}
+     * - {@see FormInterface::HTTP_METHOD_GET `get`}
+     *
+     * @param  string $method The HTTP method, usually one of GET or POST.
+     * @throws InvalidArgumentException If the method is invalid.
+     * @throws InvalidArgumentException If the method is unsupported.
      * @return FormInterface Chainable
      */
     public function setMethod($method)
     {
-        $method = strtolower($method);
-        if (!in_array($method, ['post', 'get'])) {
-            throw new InvalidArgumentException(
-                'Method must be "post" or "get"'
-            );
+        if ($method === null || $method === '') {
+            $this->method = $this->defaultMethod();
+            return $this;
         }
+
+        if (!is_string($method)) {
+            throw new InvalidArgumentException(sprintf(
+                'The form method must be a string, received %s',
+                (is_object($method) ? get_class($method) : gettype($method))
+            ));
+        }
+
+        $method = strtolower($method);
+        if (!isset($this->validMethods[$method])) {
+            throw new InvalidArgumentException(sprintf(
+                'Unsupported HTTP method "%s" provided',
+                $method
+            ));
+        }
+
         $this->method = $method;
 
         return $this;
     }
 
     /**
-     * @return string Either "post" or "get".
+     * Retrieve the default HTTP method.
+     *
+     * @return string
+     */
+    private function defaultMethod()
+    {
+        return FormInterface::DEFAULT_HTTP_METHOD;
+    }
+
+    /**
+     * Retrieve the HTTP method used to submit the form.
+     *
+     * @return string
      */
     public function method()
     {
@@ -170,282 +149,53 @@ trait FormTrait
     }
 
     /**
-     * @param string $mode The l10n mode.
+     * Set the form's dataset.
+     *
+     * @param  array $data Key/value pairs representing form fields and their values.
      * @return FormInterface Chainable
      */
-    public function setL10nMode($mode)
+    public function setFormData(array $data)
     {
-        $this->l10nMode = $mode;
+        $this->formData = $data;
 
         return $this;
     }
 
     /**
-     * @return string
-     */
-    public function l10nMode()
-    {
-        return $this->l10nMode;
-    }
-
-    /**
-     * Set the object's form groups.
+     * Append a new value, or merge a new array, onto the form's dataset.
      *
-     * @param array $groups A collection of group structures.
-     * @return FormInterface Chainable
-     */
-    public function setGroups(array $groups)
-    {
-        $this->groups = [];
-
-        foreach ($groups as $groupIdent => $group) {
-            $this->addGroup($groupIdent, $group);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add a form group.
-     *
-     * @param string                   $groupIdent The group identifier.
-     * @param array|FormGroupInterface $group      The group object or structure.
-     * @throws InvalidArgumentException If the identifier is not a string or the group is invalid.
-     * @return FormInterface Chainable
-     */
-    public function addGroup($groupIdent, $group)
-    {
-        if (!is_string($groupIdent)) {
-            throw new InvalidArgumentException(
-                'Group identifier must be a string'
-            );
-        }
-
-        if ($group instanceof FormGroupInterface) {
-            $group->setForm($this);
-            $group->setIdent($groupIdent);
-            $this->groups[$groupIdent] = $group;
-        } elseif (is_array($group)) {
-            if (isset($group['ident'])) {
-                $groupIdent = $group['ident'];
-            } else {
-                $group['ident'] = $groupIdent;
-            }
-
-            if (!isset($group['type'])) {
-                $group['type'] = $this->defaultGroupType();
-            }
-
-            $g = $this->formGroupFactory()->create($group['type']);
-            $g->setForm($this);
-            $g->setData($group);
-            $this->groups[$groupIdent] = $g;
-        } elseif ($group === false || $group === null) {
-            return $this;
-        } else {
-            throw new InvalidArgumentException(
-                sprintf(
-                    'Group must be an instance of %s or an array of form group options, received %s',
-                    'FormGroupInterface',
-                    (is_object($group) ? get_class($group) : gettype($group))
-                )
-            );
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve the default form group class name.
-     *
-     * @return string
-     */
-    public function defaultGroupType()
-    {
-        return 'charcoal/ui/form-group/generic';
-    }
-
-    /**
-     * Retrieve the form groups.
-     *
-     * @param callable $groupCallback Optional callback applied to each form group.
-     * @return FormGroupInterface[]|Generator
-     */
-    public function groups(callable $groupCallback = null)
-    {
-        $groups = $this->groups;
-        uasort($groups, [$this, 'sortGroupsByPriority']);
-
-        $groupCallback = (isset($groupCallback) ? $groupCallback : $this->groupCallback);
-
-        $i = 1;
-        foreach ($groups as $group) {
-            if (!$group->active()) {
-                continue;
-            }
-
-            // Test formGroup vs. ACL roles
-            $authUser = $this->authenticator()->authenticate();
-            if (!$this->authorizer()->userAllowed($authUser, $group->requiredAclPermissions())) {
-                header('HTTP/1.0 403 Forbidden');
-                header('Location: '.$this->adminUrl().'login');
-                continue;
-            }
-
-            if (!$group->l10nMode()) {
-                $group->setL10nMode($this->l10nMode());
-            }
-
-            if ($groupCallback) {
-                $groupCallback($group);
-            }
-
-            $GLOBALS['widget_template'] = $group->template();
-
-            if ($this->isTabbable() && $i > 1) {
-                $group->isHidden = true;
-            }
-            $i++;
-
-            yield $group;
-        }
-    }
-
-    /**
-     * Determine if the form has any groups.
-     *
-     * @return boolean
-     */
-    public function hasGroups()
-    {
-        return (count($this->groups) > 0);
-    }
-
-    /**
-     * Determine if the form has a given group.
-     *
-     * @param string $groupIdent The group identifier to look up.
-     * @throws InvalidArgumentException If the group identifier is invalid.
-     * @return boolean
-     */
-    public function hasGroup($groupIdent)
-    {
-        if (!is_string($groupIdent)) {
-            throw new InvalidArgumentException(
-                'Group identifier must be a string'
-            );
-        }
-
-        return isset($this->groups[$groupIdent]);
-    }
-
-    /**
-     * Count the number of form groups.
-     *
-     * @return integer
-     */
-    public function numGroups()
-    {
-        return count($this->groups);
-    }
-
-    /**
-     * Set the widget's content group display mode.
-     *
-     * Currently only supports "tab".
-     *
-     * @param string $mode Group display mode.
-     * @throws InvalidArgumentException If the display mode is not a string.
-     * @return ObjectFormWidget Chainable.
-     */
-    public function setGroupDisplayMode($mode)
-    {
-        if (!is_string($mode)) {
-            throw new InvalidArgumentException(
-                'Display mode must be a string'
-            );
-        }
-
-        if ($mode === 'tabs') {
-            $mode = 'tab';
-        }
-
-        $this->groupDisplayMode = $mode;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve the widget's content group display mode.
-     *
-     * @return string Group display mode.
-     */
-    public function groupDisplayMode()
-    {
-        return $this->groupDisplayMode;
-    }
-
-    /**
-     * Determine if content groups are to be displayed as tabbable panes.
-     *
-     * @return boolean
-     */
-    public function isTabbable()
-    {
-        return ($this->groupDisplayMode() === 'tab');
-    }
-
-    /**
-     * @param array $formData The (pre-populated) form data, as [$key=>$val] array.
-     * @return FormInterface Chainable
-     */
-    public function setFormData(array $formData)
-    {
-        $this->formData = $formData;
-
-        return $this;
-    }
-
-    /**
-     * @param string $key The form data key, or poperty identifier.
-     * @param mixed  $val The form data value, for a given key.
+     * @param  string|array $key The name of the field whose data is contained in $value
+     *     or an array of key/value pairs to merge with existing data.
+     * @param  mixed        $val The field's value if $key is a string.
      * @throws InvalidArgumentException If the key argument is not a string.
      * @return FormInterface Chainable
      */
     public function addFormData($key, $val)
     {
-        if (!is_string($key)) {
-            throw new InvalidArgumentException(
-                'Can not add form data: Data key must be a string'
-            );
+        if (is_array($key)) {
+            $this->formData = array_merge($this->formData, $key);
+            return $this;
         }
+
+        if (!is_string($key)) {
+            throw new InvalidArgumentException(sprintf(
+                'Form data key must be a string, received %s',
+                (is_object($key) ? get_class($key) : gettype($key))
+            ));
+        }
+
         $this->formData[$key] = $val;
 
         return $this;
     }
 
     /**
+     * Retrieve the form's dataset.
+     *
      * @return array
      */
     public function formData()
     {
         return $this->formData;
-    }
-
-    /**
-     * Static comparison function used by {@see uasort()}.
-     *
-     * @param  FormGroupInterface $a Form Group A.
-     * @param  FormGroupInterface $b Form Group B.
-     * @return integer Sorting value: -1 or 1
-     */
-    protected static function sortGroupsByPriority(
-        FormGroupInterface $a,
-        FormGroupInterface $b
-    ) {
-        $a = $a->priority();
-        $b = $b->priority();
-
-        return ($a < $b) ? (-1) : 1;
     }
 }

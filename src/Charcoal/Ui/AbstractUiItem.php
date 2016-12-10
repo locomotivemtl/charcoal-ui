@@ -4,11 +4,12 @@ namespace Charcoal\Ui;
 
 use \InvalidArgumentException;
 
-// From PSR-3 (Logger)
+// From PSR-3
 use \Psr\Log\LoggerAwareInterface;
 use \Psr\Log\LoggerAwareTrait;
 use \Psr\Log\NullLogger;
 
+// From Pimple
 use \Pimple\Container;
 
 // From 'charcoal-config'

@@ -2,8 +2,10 @@
 
 namespace Charcoal\Ui\FormGroup;
 
-// Intra-module (`charcoal-ui`) dependencies
+// From 'charcoal-ui'
 use \Charcoal\Ui\AbstractUiItem;
+use \Charcoal\Ui\FormInput\FormInputAwareInterface;
+use \Charcoal\Ui\FormInput\FormInputAwareTrait;
 use \Charcoal\Ui\FormGroup\FormGroupInterface;
 use \Charcoal\Ui\FormGroup\FormGroupTrait;
 use \Charcoal\Ui\Layout\LayoutAwareInterface;
@@ -16,9 +18,11 @@ use \Charcoal\Ui\Layout\LayoutAwareTrait;
  */
 abstract class AbstractFormGroup extends AbstractUiItem implements
     FormGroupInterface,
+    FormInputAwareInterface,
     LayoutAwareInterface
 {
     use FormGroupTrait;
+    use FormInputAwareTrait;
     use LayoutAwareTrait;
 
     /**

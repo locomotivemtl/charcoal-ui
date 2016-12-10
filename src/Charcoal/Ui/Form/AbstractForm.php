@@ -5,9 +5,13 @@ namespace Charcoal\Ui\Form;
 // Intra-module (`charcoal-ui`) dependencies
 use \Charcoal\Ui\AbstractUiItem;
 use \Charcoal\Ui\Form\FormInterface;
+use \Charcoal\Ui\Form\FormTrait;
+use \Charcoal\Ui\FormGroup\FormGroupAwareInterface;
+use \Charcoal\Ui\FormGroup\FormGroupAwareTrait;
+use \Charcoal\Ui\FormInput\FormInputAwareInterface;
+use \Charcoal\Ui\FormInput\FormInputAwareTrait;
 use \Charcoal\Ui\Layout\LayoutAwareInterface;
 use \Charcoal\Ui\Layout\LayoutAwareTrait;
-use \Charcoal\Ui\UiItemInterface;
 
 /**
  * A Basic Form
@@ -16,11 +20,14 @@ use \Charcoal\Ui\UiItemInterface;
  */
 abstract class AbstractForm extends AbstractUiItem implements
     FormInterface,
-    LayoutAwareInterface,
-    UiItemInterface
+    FormInputAwareInterface,
+    FormGroupAwareInterface,
+    LayoutAwareInterface
 {
-    use LayoutAwareTrait;
     use FormTrait;
+    use FormInputAwareTrait;
+    use FormGroupAwareTrait;
+    use LayoutAwareTrait;
 
     /**
      * Returns a new form.
@@ -34,5 +41,15 @@ abstract class AbstractForm extends AbstractUiItem implements
 
         /** Satisfies {@see \Charcoal\Ui\Layout\LayoutAwareInterface} */
         $this->setLayoutBuilder($data['layout_builder']);
+    }
+
+    /**
+     * Retrieve the default form group class name.
+     *
+     * @return string
+     */
+    public function defaultGroupType()
+    {
+        return 'charcoal/ui/form-group/generic';
     }
 }

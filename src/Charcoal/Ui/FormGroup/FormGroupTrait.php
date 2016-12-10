@@ -45,13 +45,6 @@ trait FormGroupTrait
     protected $formInputBuilder;
 
     /**
-     * The L10N display mode.
-     *
-     * @var string
-     */
-    private $l10nMode;
-
-    /**
      * The group's identifier.
      *
      * @var string
@@ -111,25 +104,6 @@ trait FormGroupTrait
     public function form()
     {
         return $this->form;
-    }
-
-    /**
-     * @param string $mode The l10n mode.
-     * @return FormGroupInterface Chainable
-     */
-    public function setL10nMode($mode)
-    {
-        $this->l10nMode = $mode;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function l10nMode()
-    {
-        return $this->l10nMode;
     }
 
     /**
@@ -208,8 +182,8 @@ trait FormGroupTrait
 
         $inputCallback = isset($inputCallback) ? $inputCallback : $this->inputCallback;
         foreach ($inputs as $input) {
-            if (!$input->l10nMode()) {
-                $input->setL10nMode($this->l10nMode());
+            if (!$input->hasL10nDisplayMode()) {
+                $input->setL10nDisplayMode($this->l10nDisplayMode());
             }
             if ($inputCallback) {
                 $inputCallback($input);
