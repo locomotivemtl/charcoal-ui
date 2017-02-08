@@ -182,10 +182,10 @@
 </span><span id="3" class="l"><a href="#3">  3: </a><span class="php-keyword1">namespace</span> Charcoal\Ui;
 </span><span id="4" class="l"><a href="#4">  4: </a>
 </span><span id="5" class="l"><a href="#5">  5: </a><span class="php-comment">// From 'charcoal-config'</span>
-</span><span id="6" class="l"><a href="#6">  6: </a><span class="php-keyword1">use</span> \Charcoal\Config\EntityInterface;
+</span><span id="6" class="l"><a href="#6">  6: </a><span class="php-keyword1">use</span> Charcoal\Config\EntityInterface;
 </span><span id="7" class="l"><a href="#7">  7: </a>
 </span><span id="8" class="l"><a href="#8">  8: </a><span class="php-comment">// From 'charcoal-view'</span>
-</span><span id="9" class="l"><a href="#9">  9: </a><span class="php-keyword1">use</span> \Charcoal\View\ViewableInterface;
+</span><span id="9" class="l"><a href="#9">  9: </a><span class="php-keyword1">use</span> Charcoal\View\ViewableInterface;
 </span><span id="10" class="l"><a href="#10"> 10: </a>
 </span><span id="11" class="l"><a href="#11"> 11: </a><span class="php-comment">/**
 </span></span><span id="12" class="l"><a href="#12"> 12: </a><span class="php-comment"> * Defines a UI Item.
@@ -257,7 +257,7 @@
 </span><span id="78" class="l"><a href="#78"> 78: </a>    <span class="php-comment">/**
 </span></span><span id="79" class="l"><a href="#79"> 79: </a><span class="php-comment">     * Retrieve the title.
 </span></span><span id="80" class="l"><a href="#80"> 80: </a><span class="php-comment">     *
-</span></span><span id="81" class="l"><a href="#81"> 81: </a><span class="php-comment">     * @return TranslationString|string|null
+</span></span><span id="81" class="l"><a href="#81"> 81: </a><span class="php-comment">     * @return \Charcoal\Translator\Translation|null
 </span></span><span id="82" class="l"><a href="#82"> 82: </a><span class="php-comment">     */</span>
 </span><span id="83" class="l"><a href="#83"> 83: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> title();
 </span><span id="84" class="l"><a href="#84"> 84: </a>
@@ -272,7 +272,7 @@
 </span><span id="93" class="l"><a href="#93"> 93: </a>    <span class="php-comment">/**
 </span></span><span id="94" class="l"><a href="#94"> 94: </a><span class="php-comment">     * Retrieve the sub-title.
 </span></span><span id="95" class="l"><a href="#95"> 95: </a><span class="php-comment">     *
-</span></span><span id="96" class="l"><a href="#96"> 96: </a><span class="php-comment">     * @return TranslationString|string|null
+</span></span><span id="96" class="l"><a href="#96"> 96: </a><span class="php-comment">     * @return \Charcoal\Translator\Translation|null
 </span></span><span id="97" class="l"><a href="#97"> 97: </a><span class="php-comment">     */</span>
 </span><span id="98" class="l"><a href="#98"> 98: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> subtitle();
 </span><span id="99" class="l"><a href="#99"> 99: </a>
@@ -287,7 +287,7 @@
 </span><span id="108" class="l"><a href="#108">108: </a>    <span class="php-comment">/**
 </span></span><span id="109" class="l"><a href="#109">109: </a><span class="php-comment">     * Retrieve the description.
 </span></span><span id="110" class="l"><a href="#110">110: </a><span class="php-comment">     *
-</span></span><span id="111" class="l"><a href="#111">111: </a><span class="php-comment">     * @return TranslationString|string|null
+</span></span><span id="111" class="l"><a href="#111">111: </a><span class="php-comment">     * @return \Charcoal\Translator\Translation|null
 </span></span><span id="112" class="l"><a href="#112">112: </a><span class="php-comment">     */</span>
 </span><span id="113" class="l"><a href="#113">113: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> description();
 </span><span id="114" class="l"><a href="#114">114: </a>
@@ -302,7 +302,7 @@
 </span><span id="123" class="l"><a href="#123">123: </a>    <span class="php-comment">/**
 </span></span><span id="124" class="l"><a href="#124">124: </a><span class="php-comment">     * Retrieve the notes.
 </span></span><span id="125" class="l"><a href="#125">125: </a><span class="php-comment">     *
-</span></span><span id="126" class="l"><a href="#126">126: </a><span class="php-comment">     * @return TranslationString|string|null
+</span></span><span id="126" class="l"><a href="#126">126: </a><span class="php-comment">     * @return \Charcoal\Translator\Translation|null
 </span></span><span id="127" class="l"><a href="#127">127: </a><span class="php-comment">     */</span>
 </span><span id="128" class="l"><a href="#128">128: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> notes();
 </span><span id="129" class="l"><a href="#129">129: </a>
