@@ -1,0 +1,2727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">178</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1179176882"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1179176882" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-824407321"></a>
+                                <a href="../namespaces/Charcoal.html" style="margin-left: 30px; padding-left: 0">Charcoal</a>
+            </div>
+            <div id="namespace-824407321" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1009420946"></a>
+                                <a href="../namespaces/Charcoal.Ui.html" style="margin-left: 30px; padding-left: 0">Ui</a>
+            </div>
+            <div id="namespace-1009420946" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-182454137"></a>
+                                <a href="../namespaces/Charcoal.Ui.Dashboard.html" style="margin-left: 30px; padding-left: 0">Dashboard</a>
+            </div>
+            <div id="namespace-182454137" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Dashboard.DashboardInterface.html">DashboardInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Dashboard.DashboardTrait.html">DashboardTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.AbstractDashboard.html">AbstractDashboard</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardBuilder.html">DashboardBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.DashboardConfig.html">DashboardConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.FormInputConfig.html">FormInputConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Dashboard.GenericDashboard.html">GenericDashboard</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-596504750"></a>
+                                <a href="../namespaces/Charcoal.Ui.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-596504750" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Form.FormInterface.html">FormInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Form.FormTrait.html">FormTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Form.AbstractForm.html">AbstractForm</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormBuilder.html">FormBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.FormConfig.html">FormConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Form.GenericForm.html">GenericForm</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-617004663"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormGroup.html" style="margin-left: 30px; padding-left: 0">FormGroup</a>
+            </div>
+            <div id="namespace-617004663" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupInterface.html">FormGroupInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupTrait.html">FormGroupTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.AbstractFormGroup.html">AbstractFormGroup</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.FormGroupConfig.html">FormGroupConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormGroup.GenericFormGroup.html">GenericFormGroup</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2143836116"></a>
+                                <a href="../namespaces/Charcoal.Ui.FormInput.html" style="margin-left: 30px; padding-left: 0">FormInput</a>
+            </div>
+            <div id="namespace-2143836116" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.FormInput.FormInputInterface.html">FormInputInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.AbstractFormInput.html">AbstractFormInput</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.FormInputBuilder.html">FormInputBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.FormInput.GenericFormInput.html">GenericFormInput</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-238291837"></a>
+                                <a href="../namespaces/Charcoal.Ui.Layout.html" style="margin-left: 30px; padding-left: 0">Layout</a>
+            </div>
+            <div id="namespace-238291837" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareInterface.html">LayoutAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Layout.LayoutInterface.html">LayoutInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutAwareTrait.html">LayoutAwareTrait</a></li>
+                                                    <li class="trait"><a href="../classes/Charcoal.Ui.Layout.LayoutTrait.html">LayoutTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.Layout.AbstractLayout.html">AbstractLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.GenericLayout.html">GenericLayout</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutBuilder.html">LayoutBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutConfig.html">LayoutConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Layout.LayoutFactory.html">LayoutFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2018927427"></a>
+                                <a href="../namespaces/Charcoal.Ui.Menu.html" style="margin-left: 30px; padding-left: 0">Menu</a>
+            </div>
+            <div id="namespace-2018927427" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.Menu.MenuInterface.html">MenuInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.AbstractMenu.html">AbstractMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.GenericMenu.html">GenericMenu</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuBuilder.html">MenuBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuConfig.html">MenuConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.Menu.MenuFactory.html">MenuFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2097822809"></a>
+                                <a href="../namespaces/Charcoal.Ui.MenuItem.html" style="margin-left: 30px; padding-left: 0">MenuItem</a>
+            </div>
+            <div id="namespace-2097822809" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">MenuItemInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html">AbstractMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.GenericMenuItem.html">GenericMenuItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemBuilder.html">MenuItemBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemConfig.html">MenuItemConfig</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.MenuItem.MenuItemFactory.html">MenuItemFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1920120503"></a>
+                                <a href="../namespaces/Charcoal.Ui.ServiceProvider.html" style="margin-left: 30px; padding-left: 0">ServiceProvider</a>
+            </div>
+            <div id="namespace-1920120503" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.DashboardServiceProvider.html">DashboardServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.FormServiceProvider.html">FormServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.LayoutServiceProvider.html">LayoutServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.MenuServiceProvider.html">MenuServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.ServiceProvider.UiServiceProvider.html">UiServiceProvider</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.UiGroupingInterface.html">UiGroupingInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Charcoal.Ui.UiItemInterface.html">UiItemInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Charcoal.Ui.UiGroupingTrait.html">UiGroupingTrait</a></li>
+                                                    <li class="trait"><a href="../classes/Charcoal.Ui.UiItemTrait.html">UiItemTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Charcoal.Ui.AbstractUiItem.html">AbstractUiItem</a></li>
+                                                    <li class="class"><a href="../classes/Charcoal.Ui.UiItemConfig.html">UiItemConfig</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Charcoal.Ui.MenuItem.html">\Charcoal\Ui\MenuItem</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Charcoal\Ui\MenuItem</small>AbstractMenuItem</h1>
+                    <p><em>A Basic Menu Item</em></p>
+                    <p>Abstract implementation of <a href="/classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.AbstractUiItem.html#method_setDependencies" class="">setDependencies()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.AbstractUiItem.html#method_setActive" class="">setActive()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.AbstractUiItem.html#method_active" class="">active()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setType" class="">setType()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_type" class="">type()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setTemplate" class="">setTemplate()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_template" class="">template()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setTitle" class="">setTitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_title" class="">title()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setSubtitle" class="">setSubtitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_subtitle" class="">subtitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setDescription" class="">setDescription()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_description" class="">description()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setNotes" class="">setNotes()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_notes" class="">notes()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowTitle" class="">setShowTitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showTitle" class="">showTitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowSubtitle" class="">setShowSubtitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showSubtitle" class="">showSubtitle()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowDescription" class="">setShowDescription()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showDescription" class="">showDescription()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowNotes" class="">setShowNotes()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showNotes" class="">showNotes()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowHeader" class="">setShowHeader()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showHeader" class="">showHeader()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setShowFooter" class="">setShowFooter()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_showFooter" class="">showFooter()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_icon" class="">icon()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_setIcon" class="">setIcon()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setMenuItemBuilder" class="">setMenuItemBuilder()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setItemCallback" class="">setItemCallback()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setIdent" class="">setIdent()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_ident" class="">ident()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setLabel" class="">setLabel()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_label" class="">label()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setUrl" class="">setUrl()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_url" class="">url()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_hasUrl" class="">hasUrl()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setChildren" class="">setChildren()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_addChild" class="">addChild()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_children" class="">children()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_hasChildren" class="">hasChildren()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_numChildren" class="">numChildren()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#method_translator" class="">translator()</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#method_setMenu" class="">setMenu()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_ident" class="">$ident</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_label" class="">$label</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_url" class="">$url</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_children" class="">$children</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Charcoal.Ui.AbstractUiItem.html#property_active" class="">$active</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_type" class="">$type</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_template" class="">$template</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_title" class="">$title</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_subtitle" class="">$subtitle</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_description" class="">$description</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_notes" class="">$notes</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showTitle" class="">$showTitle</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showSubtitle" class="">$showSubtitle</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showDescription" class="">$showDescription</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showNotes" class="">$showNotes</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showHeader" class="">$showHeader</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_showFooter" class="">$showFooter</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.UiItemTrait.html#property_icon" class="">$icon</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_menu" class="">$menu</a><br />
+                                                                    <a href="../classes/Charcoal.Ui.MenuItem.AbstractMenuItem.html#property_childCallback" class="">$childCallback</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                            <span class="label label-info">abstract</span>
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/MenuItem.AbstractMenuItem.html"><div class="path-wrapper">MenuItem/AbstractMenuItem.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                        <div class="namespace-wrapper">\Charcoal\Config\AbstractEntity</div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/Charcoal.Ui.AbstractUiItem.html">\Charcoal\Ui\AbstractUiItem</a></div>
+                                                                                                    <div class="namespace-wrapper">\Charcoal\Ui\MenuItem\AbstractMenuItem</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html"><div class="namespace-wrapper">\Charcoal\Ui\MenuItem\MenuItemInterface</div></a></dd>
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ident" name="property_ident" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$ident</h3>
+                <pre class="signature">$ident : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_label" name="property_label" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$label</h3>
+                <pre class="signature">$label : \Charcoal\Translator\Translation|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Translator\Translation|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_url" name="property_url" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$url</h3>
+                <pre class="signature">$url : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_children" name="property_children" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$children</h3>
+                <pre class="signature">$children : array&lt;mixed,\Charcoal\Ui\MenuItem\MenuItemInterface&gt;</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,<a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>&gt;
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_active" name="property_active" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$active</h3>
+                <pre class="signature">$active : boolean</pre>
+                <p><em>A UI item is active by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.AbstractUiItem.html"><div class="path-wrapper">\Charcoal\Ui\AbstractUiItem</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_type" name="property_type" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$type</h3>
+                <pre class="signature">$type : string|null</pre>
+                <p><em>The UI item type.</em></p>
+                
+
+                                <h4>Type</h4>
+                string|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_template" name="property_template" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$template</h3>
+                <pre class="signature">$template : string|null</pre>
+                <p><em>The UI item&#039;s template.</em></p>
+                
+
+                                <h4>Type</h4>
+                string|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_title" name="property_title" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$title</h3>
+                <pre class="signature">$title : \Charcoal\Translator\Translation</pre>
+                <p><em>The UI item&#039;s title.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Translator\Translation
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_subtitle" name="property_subtitle" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$subtitle</h3>
+                <pre class="signature">$subtitle : \Charcoal\Translator\Translation</pre>
+                <p><em>The UI item&#039;s sub-title.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Translator\Translation
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_description" name="property_description" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$description</h3>
+                <pre class="signature">$description : \Charcoal\Translator\Translation</pre>
+                <p><em>The UI item&#039;s description.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Translator\Translation
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_notes" name="property_notes" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$notes</h3>
+                <pre class="signature">$notes : \Charcoal\Translator\Translation</pre>
+                <p><em>The UI item&#039;s notes.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Charcoal\Translator\Translation
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showTitle" name="property_showTitle" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showTitle</h3>
+                <pre class="signature">$showTitle : boolean</pre>
+                <p><em>The title is displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showSubtitle" name="property_showSubtitle" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showSubtitle</h3>
+                <pre class="signature">$showSubtitle : boolean</pre>
+                <p><em>The sub-title is displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showDescription" name="property_showDescription" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showDescription</h3>
+                <pre class="signature">$showDescription : boolean</pre>
+                <p><em>The description is displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showNotes" name="property_showNotes" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showNotes</h3>
+                <pre class="signature">$showNotes : boolean</pre>
+                <p><em>The notes are displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showHeader" name="property_showHeader" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showHeader</h3>
+                <pre class="signature">$showHeader : boolean</pre>
+                <p><em>The header is displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_showFooter" name="property_showFooter" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$showFooter</h3>
+                <pre class="signature">$showFooter : boolean</pre>
+                <p><em>The footer is displayed by default.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_icon" name="property_icon" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$icon</h3>
+                <pre class="signature">$icon : string</pre>
+                <p><em>The icon ident from font-awesome library</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_menu" name="property_menu" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$menu</h3>
+                <pre class="signature">$menu : \Charcoal\Ui\Menu\MenuInterface</pre>
+                <p><em>Parent menu item</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Charcoal.Ui.Menu.MenuInterface.html">\Charcoal\Ui\Menu\MenuInterface</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_childCallback" name="property_childCallback" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$childCallback</h3>
+                <pre class="signature">$childCallback : callable</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                callable
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(array|\ArrayAccess  <span class="argument">$data</span>) </pre>
+                <p><em>Return a new menu item.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array|\ArrayAccess</td>
+                                <td>$data </td>
+                                <td><p>Class dependencies.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDependencies" name="method_setDependencies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDependencies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDependencies(\Pimple\Container  <span class="argument">$container</span>) : void</pre>
+                <p><em>Inject dependencies from a DI Container.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Pimple\Container</td>
+                                <td>$container </td>
+                                <td><p>A dependencies container instance.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.AbstractUiItem.html"><div class="path-wrapper">\Charcoal\Ui\AbstractUiItem</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setActive" name="method_setActive" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setActive()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setActive(boolean  <span class="argument">$active</span>) : \Charcoal\Ui\AbstractUiItem</pre>
+                <p><em>Activates/deactivates the UI item.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$active </td>
+                                <td><p>Activate (TRUE) or deactivate (FALSE) the UI item.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.AbstractUiItem.html">\Charcoal\Ui\AbstractUiItem</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.AbstractUiItem.html"><div class="path-wrapper">\Charcoal\Ui\AbstractUiItem</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_active" name="method_active" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">active()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">active() : boolean</pre>
+                <p><em>Determine if the UI item is active.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.AbstractUiItem.html"><div class="path-wrapper">\Charcoal\Ui\AbstractUiItem</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setType" name="method_setType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setType(string|null  <span class="argument">$type</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the UI item type.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|null</td>
+                                <td>$type </td>
+                                <td><p>The UI item type.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the type is not a string.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_type" name="method_type" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">type()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">type() : string</pre>
+                <p><em>Retrieve the UI item type.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTemplate" name="method_setTemplate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTemplate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTemplate(string  <span class="argument">$template</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the UI item&#039;s template.</em></p>
+                <p>Usually, a path to a file containing the template to be rendered.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$template </td>
+                                <td><p>A template (identifier).</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the template is not a string.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_template" name="method_template" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">template()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">template() : string</pre>
+                <p><em>Retrieve the UI item&#039;s template.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>If unset, returns the UI item type.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTitle" name="method_setTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTitle(mixed  <span class="argument">$title</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the UI item&#039;s title.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$title </td>
+                                <td><p>A title.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_title" name="method_title" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">title()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">title() : \Charcoal\Translator\Translation|null</pre>
+                <p><em>Retrieve the title.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Translator\Translation|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSubtitle" name="method_setSubtitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setSubtitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSubtitle(mixed  <span class="argument">$subtitle</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the UI item&#039;s sub-title.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$subtitle </td>
+                                <td><p>A sub-title.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_subtitle" name="method_subtitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">subtitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">subtitle() : \Charcoal\Translator\Translation|null</pre>
+                <p><em>Retrieve the sub-title.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Translator\Translation|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDescription" name="method_setDescription" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDescription()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDescription(mixed  <span class="argument">$description</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the UI item&#039;s description.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$description </td>
+                                <td><p>A description.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_description" name="method_description" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">description()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">description() : \Charcoal\Translator\Translation|null</pre>
+                <p><em>Retrieve the description.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Translator\Translation|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setNotes" name="method_setNotes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setNotes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setNotes(mixed  <span class="argument">$notes</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set notes about the UI item.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$notes </td>
+                                <td><p>Notes.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_notes" name="method_notes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">notes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">notes() : \Charcoal\Translator\Translation|null</pre>
+                <p><em>Retrieve the notes.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Translator\Translation|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowTitle" name="method_setShowTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowTitle(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s title.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the title.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showTitle" name="method_showTitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showTitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showTitle() : boolean</pre>
+                <p><em>Determine if the title is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there is a title.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowSubtitle" name="method_setShowSubtitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowSubtitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowSubtitle(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s sub-title.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the sub-title.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showSubtitle" name="method_showSubtitle" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showSubtitle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showSubtitle() : boolean</pre>
+                <p><em>Determine if the sub-title is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there is a sub-title.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowDescription" name="method_setShowDescription" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowDescription()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowDescription(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s description.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the description.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showDescription" name="method_showDescription" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showDescription()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showDescription() : boolean</pre>
+                <p><em>Determine if the description is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there is a description.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowNotes" name="method_setShowNotes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowNotes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowNotes(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s notes.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the notes.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showNotes" name="method_showNotes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showNotes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showNotes() : boolean</pre>
+                <p><em>Determine if the notes is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there are notes.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowHeader" name="method_setShowHeader" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowHeader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowHeader(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s header.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the header.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showHeader" name="method_showHeader" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showHeader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showHeader() : boolean</pre>
+                <p><em>Determine if the header is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there is a title.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setShowFooter" name="method_setShowFooter" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setShowFooter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setShowFooter(boolean  <span class="argument">$show</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Show/hide the UI item&#039;s footer.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$show </td>
+                                <td><p>Show (TRUE) or hide (FALSE) the footer.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_showFooter" name="method_showFooter" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">showFooter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">showFooter() : boolean</pre>
+                <p><em>Determine if the footer is to be displayed.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>If TRUE or unset, check if there are notes.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_icon" name="method_icon" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">icon()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">icon() : string</pre>
+                <p><em>Retrieve the path to the item&#039;s icon.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                                                            <p>[mcaskill 2016-09-16] Move this to a tab interface in charcoal-admin
+so as to focus the icon getter/setter on being a Glyphicon.</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setIcon" name="method_setIcon" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setIcon()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setIcon(string  <span class="argument">$icon</span>) : \Charcoal\Ui\UiItemInterface</pre>
+                <p><em>Set the path to the item&#039;s icon associated with the object.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$icon </td>
+                                <td><p>A path to an image.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.UiItemInterface.html">\Charcoal\Ui\UiItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMenuItemBuilder" name="method_setMenuItemBuilder" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMenuItemBuilder()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMenuItemBuilder(\Charcoal\Ui\MenuItem\MenuItemBuilder  <span class="argument">$menuItemBuilder</span>) : \Charcoal\Ui\MenuItem\MenuItemInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Charcoal.Ui.MenuItem.MenuItemBuilder.html">\Charcoal\Ui\MenuItem\MenuItemBuilder</a></td>
+                                <td>$menuItemBuilder </td>
+                                <td><p>The Menu Item Builder that will be used to create new items.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setItemCallback" name="method_setItemCallback" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setItemCallback()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setItemCallback(callable  <span class="argument">$cb</span>) : \Charcoal\Ui\MenuItem\MenuItemInterface</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>callable</td>
+                                <td>$cb </td>
+                                <td><p>The item callback.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setIdent" name="method_setIdent" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setIdent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setIdent(string  <span class="argument">$ident</span>) : \Charcoal\Ui\MenuItem\MenuItem</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ident </td>
+                                <td><p>The menu item identifier.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the identifier argument is not a string.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Ui\MenuItem\MenuItem
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ident" name="method_ident" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ident()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ident() : string</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLabel" name="method_setLabel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setLabel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLabel(mixed  <span class="argument">$label</span>) : \Charcoal\Ui\MenuItem\MenuItem</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$label </td>
+                                <td><p>The menu item label.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Ui\MenuItem\MenuItem
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_label" name="method_label" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">label()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">label() : string</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setUrl" name="method_setUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setUrl(string  <span class="argument">$url</span>) : \Charcoal\Ui\MenuItem\MenuItem</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$url </td>
+                                <td><p>The menu item URL.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Ui\MenuItem\MenuItem
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_url" name="method_url" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">url()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">url() : string</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_hasUrl" name="method_hasUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">hasUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">hasUrl() : boolean</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setChildren" name="method_setChildren" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setChildren()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setChildren(array  <span class="argument">$children</span>) : \Charcoal\Ui\MenuItem\MenuItem</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$children </td>
+                                <td><p>The menu item children items structure.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Ui\MenuItem\MenuItem
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addChild" name="method_addChild" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addChild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addChild(array|\Charcoal\Ui\MenuItem\MenuItem  <span class="argument">$child</span>) : \Charcoal\Ui\MenuItem\MenuItem</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array|\Charcoal\Ui\MenuItem\MenuItem</td>
+                                <td>$child </td>
+                                <td><p>The child menu structure or object.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\InvalidArgumentException</dt>
+                            <dd><p>If the child is not a menu object or structure.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Ui\MenuItem\MenuItem
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_children" name="method_children" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">children()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">children(callable  <span class="argument">$childCallback = null</span>) : array&lt;mixed,\Charcoal\Ui\MenuItem\MenuItemInterface&gt;</pre>
+                <p><em>Children (menu item) generator</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>callable</td>
+                                <td>$childCallback </td>
+                                <td><p>Optional callback.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_hasChildren" name="method_hasChildren" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">hasChildren()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">hasChildren() : boolean</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_numChildren" name="method_numChildren" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">numChildren()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">numChildren() : integer</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_translator" name="method_translator" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">translator()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">translator() : \Charcoal\Translator\Translator</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Charcoal\Translator\Translator
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                        <span class="label label-info">abstract</span>
+                                                <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Charcoal.Ui.UiItemTrait.html"><div class="path-wrapper">\Charcoal\Ui\UiItemTrait</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMenu" name="method_setMenu" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setMenu()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMenu(\Charcoal\Ui\Menu\MenuInterface  <span class="argument">$menu</span>) : \Charcoal\Ui\MenuItem\MenuItemInterface</pre>
+                <p><em>Set the parent (menu) object.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Charcoal.Ui.Menu.MenuInterface.html">\Charcoal\Ui\Menu\MenuInterface</a></td>
+                                <td>$menu </td>
+                                <td><p>The parent menu object.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Charcoal.Ui.MenuItem.MenuItemInterface.html">\Charcoal\Ui\MenuItem\MenuItemInterface</a>
+                                            &mdash; <p>Chainable</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">AbstractMenuItem.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/MenuItem/AbstractMenuItem.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Charcoal.html">\Charcoal</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on February 9th, 2017 at 14:21.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
