@@ -271,15 +271,15 @@
 </span><span id="92" class="l"><a href="#92"> 92: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$item</span>)) {
 </span><span id="93" class="l"><a href="#93"> 93: </a>            <span class="php-var">$item</span>[<span class="php-quote">'menu'</span>] = <span class="php-var">$this</span>;
 </span><span id="94" class="l"><a href="#94"> 94: </a>            <span class="php-var">$i</span> = <span class="php-var">$this</span>-&gt;menuItemBuilder-&gt;build(<span class="php-var">$item</span>);
-</span><span id="95" class="l"><a href="#95"> 95: </a>            <span class="php-var">$this</span>-&gt;items[] = <span class="php-var">$i</span>;
+</span><span id="95" class="l"><a href="#95"> 95: </a>            <span class="php-var">$item</span> = <span class="php-var">$i</span>;
 </span><span id="96" class="l"><a href="#96"> 96: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$item</span> <span class="php-keyword1">instanceof</span> MenuItemInterface) {
 </span><span id="97" class="l"><a href="#97"> 97: </a>            <span class="php-var">$item</span>-&gt;setMenu(<span class="php-var">$this</span>);
-</span><span id="98" class="l"><a href="#98"> 98: </a>            <span class="php-var">$this</span>-&gt;items[] = <span class="php-var">$item</span>;
-</span><span id="99" class="l"><a href="#99"> 99: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="100" class="l"><a href="#100">100: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
-</span><span id="101" class="l"><a href="#101">101: </a>                <span class="php-quote">'Item must be an array of menu item options or a MenuItem object'</span>
-</span><span id="102" class="l"><a href="#102">102: </a>            );
-</span><span id="103" class="l"><a href="#103">103: </a>        }
+</span><span id="98" class="l"><a href="#98"> 98: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="99" class="l"><a href="#99"> 99: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
+</span><span id="100" class="l"><a href="#100">100: </a>                <span class="php-quote">'Item must be an array of menu item options or a MenuItem object'</span>
+</span><span id="101" class="l"><a href="#101">101: </a>            );
+</span><span id="102" class="l"><a href="#102">102: </a>        }
+</span><span id="103" class="l"><a href="#103">103: </a>        <span class="php-var">$this</span>-&gt;items[] = <span class="php-var">$item</span>;
 </span><span id="104" class="l"><a href="#104">104: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="105" class="l"><a href="#105">105: </a>    }
 </span><span id="106" class="l"><a href="#106">106: </a>

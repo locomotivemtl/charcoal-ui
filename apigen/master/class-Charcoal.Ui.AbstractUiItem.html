@@ -149,11 +149,16 @@ Charcoal\Config\AbstractEntity
 			<img src="resources/inherit.png" alt="Extended by">
 <b><span>Charcoal\Ui\AbstractUiItem</span></b>			
 			 implements 
+<span>Charcoal\User\AuthAwareInterface</span>, 
+			
 <span>Psr\Log\LoggerAwareInterface</span>, 
 			
 				<a href="class-Charcoal.Ui.UiItemInterface.html"><span>Charcoal\Ui\UiItemInterface</span></a>
 			
 			 uses 
+					Charcoal\User\AuthAwareTrait (not available)
+
+			
 					Psr\Log\LoggerAwareTrait (not available)
 
 			
@@ -199,7 +204,7 @@ Charcoal\Config\AbstractEntity
 		<b>Namespace:</b> <a href="namespace-Charcoal.html">Charcoal</a>\<a href="namespace-Charcoal.Ui.html">Ui</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Charcoal.Ui.AbstractUiItem.html#28-99" title="Go to source code">Charcoal/Ui/AbstractUiItem.php</a>
+			<b>Located at</b> <a href="source-class-Charcoal.Ui.AbstractUiItem.html#32-106" title="Go to source code">Charcoal/Ui/AbstractUiItem.php</a>
 		<br>
 	</div>
 
@@ -219,7 +224,7 @@ Charcoal\Config\AbstractEntity
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#49-64" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#55-70" title="Go to source code">__construct</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Return a new UI item.</p>
@@ -254,7 +259,7 @@ Charcoal\Config\AbstractEntity
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDependencies">#</a>
-		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#66-75" title="Go to source code">setDependencies</a>( <span>Pimple\Container <var>$container</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#72-82" title="Go to source code">setDependencies</a>( <span>Pimple\Container <var>$container</var></span> )</code>
 
 		<div class="description short">
 			<p>Inject dependencies from a DI Container.</p>
@@ -289,7 +294,7 @@ Charcoal\Config\AbstractEntity
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setActive">#</a>
-		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#77-88" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
+		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#84-95" title="Go to source code">setActive</a>( <span>boolean <var>$active</var></span> )</code>
 
 		<div class="description short">
 			<p>Activates/deactivates the UI item.</p>
@@ -330,7 +335,7 @@ Charcoal\Config\AbstractEntity
 
 		<td class="name"><div>
 		<a class="anchor" href="#_active">#</a>
-		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#90-98" title="Go to source code">active</a>( )</code>
+		<code><a href="source-class-Charcoal.Ui.AbstractUiItem.html#97-105" title="Go to source code">active</a>( )</code>
 
 		<div class="description short">
 			<p>Determine if the UI item is active.</p>

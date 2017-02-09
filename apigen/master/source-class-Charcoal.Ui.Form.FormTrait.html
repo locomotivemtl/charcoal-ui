@@ -418,56 +418,56 @@
 </span><span id="239" class="l"><a href="#239">239: </a>            <span class="php-var">$g</span> = <span class="php-var">$this</span>-&gt;formGroupFactory()-&gt;create(<span class="php-var">$group</span>[<span class="php-quote">'type'</span>]);
 </span><span id="240" class="l"><a href="#240">240: </a>            <span class="php-var">$g</span>-&gt;setForm(<span class="php-var">$this</span>);
 </span><span id="241" class="l"><a href="#241">241: </a>            <span class="php-var">$g</span>-&gt;setData(<span class="php-var">$group</span>);
-</span><span id="242" class="l"><a href="#242">242: </a>            <span class="php-var">$this</span>-&gt;groups[<span class="php-var">$groupIdent</span>] = <span class="php-var">$g</span>;
-</span><span id="243" class="l"><a href="#243">243: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$group</span> === <span class="php-keyword1">false</span> || <span class="php-var">$group</span> === <span class="php-keyword1">null</span>) {
-</span><span id="244" class="l"><a href="#244">244: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="245" class="l"><a href="#245">245: </a>        } <span class="php-keyword1">else</span> {
-</span><span id="246" class="l"><a href="#246">246: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
-</span><span id="247" class="l"><a href="#247">247: </a>                <span class="php-keyword2">sprintf</span>(
-</span><span id="248" class="l"><a href="#248">248: </a>                    <span class="php-quote">'Group must be an instance of %s or an array of form group options, received %s'</span>,
-</span><span id="249" class="l"><a href="#249">249: </a>                    <span class="php-quote">'FormGroupInterface'</span>,
-</span><span id="250" class="l"><a href="#250">250: </a>                    (<span class="php-keyword2">is_object</span>(<span class="php-var">$group</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$group</span>) : <span class="php-keyword2">gettype</span>(<span class="php-var">$group</span>))
-</span><span id="251" class="l"><a href="#251">251: </a>                )
-</span><span id="252" class="l"><a href="#252">252: </a>            );
-</span><span id="253" class="l"><a href="#253">253: </a>        }
-</span><span id="254" class="l"><a href="#254">254: </a>
-</span><span id="255" class="l"><a href="#255">255: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="256" class="l"><a href="#256">256: </a>    }
+</span><span id="242" class="l"><a href="#242">242: </a>
+</span><span id="243" class="l"><a href="#243">243: </a>            <span class="php-var">$group</span> = <span class="php-var">$g</span>;
+</span><span id="244" class="l"><a href="#244">244: </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$group</span> === <span class="php-keyword1">false</span> || <span class="php-var">$group</span> === <span class="php-keyword1">null</span>) {
+</span><span id="245" class="l"><a href="#245">245: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="246" class="l"><a href="#246">246: </a>        } <span class="php-keyword1">else</span> {
+</span><span id="247" class="l"><a href="#247">247: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> InvalidArgumentException(
+</span><span id="248" class="l"><a href="#248">248: </a>                <span class="php-keyword2">sprintf</span>(
+</span><span id="249" class="l"><a href="#249">249: </a>                    <span class="php-quote">'Group must be an instance of %s or an array of form group options, received %s'</span>,
+</span><span id="250" class="l"><a href="#250">250: </a>                    <span class="php-quote">'FormGroupInterface'</span>,
+</span><span id="251" class="l"><a href="#251">251: </a>                    (<span class="php-keyword2">is_object</span>(<span class="php-var">$group</span>) ? <span class="php-keyword2">get_class</span>(<span class="php-var">$group</span>) : <span class="php-keyword2">gettype</span>(<span class="php-var">$group</span>))
+</span><span id="252" class="l"><a href="#252">252: </a>                )
+</span><span id="253" class="l"><a href="#253">253: </a>            );
+</span><span id="254" class="l"><a href="#254">254: </a>        }
+</span><span id="255" class="l"><a href="#255">255: </a>
+</span><span id="256" class="l"><a href="#256">256: </a>        <span class="php-var">$this</span>-&gt;groups[<span class="php-var">$groupIdent</span>] = <span class="php-var">$g</span>;
 </span><span id="257" class="l"><a href="#257">257: </a>
-</span><span id="258" class="l"><a href="#258">258: </a>    <span class="php-comment">/**
-</span></span><span id="259" class="l"><a href="#259">259: </a><span class="php-comment">     * Retrieve the default form group class name.
-</span></span><span id="260" class="l"><a href="#260">260: </a><span class="php-comment">     *
-</span></span><span id="261" class="l"><a href="#261">261: </a><span class="php-comment">     * @return string
-</span></span><span id="262" class="l"><a href="#262">262: </a><span class="php-comment">     */</span>
-</span><span id="263" class="l"><a href="#263">263: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> defaultGroupType()
-</span><span id="264" class="l"><a href="#264">264: </a>    {
-</span><span id="265" class="l"><a href="#265">265: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'charcoal/ui/form-group/generic'</span>;
-</span><span id="266" class="l"><a href="#266">266: </a>    }
-</span><span id="267" class="l"><a href="#267">267: </a>
-</span><span id="268" class="l"><a href="#268">268: </a>    <span class="php-comment">/**
-</span></span><span id="269" class="l"><a href="#269">269: </a><span class="php-comment">     * Retrieve the form groups.
-</span></span><span id="270" class="l"><a href="#270">270: </a><span class="php-comment">     *
-</span></span><span id="271" class="l"><a href="#271">271: </a><span class="php-comment">     * @param callable $groupCallback Optional callback applied to each form group.
-</span></span><span id="272" class="l"><a href="#272">272: </a><span class="php-comment">     * @return FormGroupInterface[]|Generator
-</span></span><span id="273" class="l"><a href="#273">273: </a><span class="php-comment">     */</span>
-</span><span id="274" class="l"><a href="#274">274: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> groups(<span class="php-keyword1">callable</span> <span class="php-var">$groupCallback</span> = <span class="php-keyword1">null</span>)
-</span><span id="275" class="l"><a href="#275">275: </a>    {
-</span><span id="276" class="l"><a href="#276">276: </a>        <span class="php-var">$groups</span> = <span class="php-var">$this</span>-&gt;groups;
-</span><span id="277" class="l"><a href="#277">277: </a>        <span class="php-keyword2">uasort</span>(<span class="php-var">$groups</span>, [<span class="php-var">$this</span>, <span class="php-quote">'sortGroupsByPriority'</span>]);
-</span><span id="278" class="l"><a href="#278">278: </a>
-</span><span id="279" class="l"><a href="#279">279: </a>        <span class="php-var">$groupCallback</span> = (<span class="php-keyword1">isset</span>(<span class="php-var">$groupCallback</span>) ? <span class="php-var">$groupCallback</span> : <span class="php-var">$this</span>-&gt;groupCallback);
-</span><span id="280" class="l"><a href="#280">280: </a>
-</span><span id="281" class="l"><a href="#281">281: </a>        <span class="php-var">$i</span> = <span class="php-num">1</span>;
-</span><span id="282" class="l"><a href="#282">282: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$groups</span> <span class="php-keyword1">as</span> <span class="php-var">$group</span>) {
-</span><span id="283" class="l"><a href="#283">283: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$group</span>-&gt;active()) {
-</span><span id="284" class="l"><a href="#284">284: </a>                <span class="php-keyword1">continue</span>;
-</span><span id="285" class="l"><a href="#285">285: </a>            }
-</span><span id="286" class="l"><a href="#286">286: </a>
-</span><span id="287" class="l"><a href="#287">287: </a>            <span class="php-comment">// Test formGroup vs. ACL roles</span>
-</span><span id="288" class="l"><a href="#288">288: </a>            <span class="php-var">$authUser</span> = <span class="php-var">$this</span>-&gt;authenticator()-&gt;authenticate();
-</span><span id="289" class="l"><a href="#289">289: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;authorizer()-&gt;userAllowed(<span class="php-var">$authUser</span>, <span class="php-var">$group</span>-&gt;requiredAclPermissions())) {
-</span><span id="290" class="l"><a href="#290">290: </a>                <span class="php-keyword2">header</span>(<span class="php-quote">'HTTP/1.0 403 Forbidden'</span>);
-</span><span id="291" class="l"><a href="#291">291: </a>                <span class="php-keyword2">header</span>(<span class="php-quote">'Location: '</span>.<span class="php-var">$this</span>-&gt;adminUrl().<span class="php-quote">'login'</span>);
+</span><span id="258" class="l"><a href="#258">258: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="259" class="l"><a href="#259">259: </a>    }
+</span><span id="260" class="l"><a href="#260">260: </a>
+</span><span id="261" class="l"><a href="#261">261: </a>    <span class="php-comment">/**
+</span></span><span id="262" class="l"><a href="#262">262: </a><span class="php-comment">     * Retrieve the default form group class name.
+</span></span><span id="263" class="l"><a href="#263">263: </a><span class="php-comment">     *
+</span></span><span id="264" class="l"><a href="#264">264: </a><span class="php-comment">     * @return string
+</span></span><span id="265" class="l"><a href="#265">265: </a><span class="php-comment">     */</span>
+</span><span id="266" class="l"><a href="#266">266: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> defaultGroupType()
+</span><span id="267" class="l"><a href="#267">267: </a>    {
+</span><span id="268" class="l"><a href="#268">268: </a>        <span class="php-keyword1">return</span> <span class="php-quote">'charcoal/ui/form-group/generic'</span>;
+</span><span id="269" class="l"><a href="#269">269: </a>    }
+</span><span id="270" class="l"><a href="#270">270: </a>
+</span><span id="271" class="l"><a href="#271">271: </a>    <span class="php-comment">/**
+</span></span><span id="272" class="l"><a href="#272">272: </a><span class="php-comment">     * Retrieve the form groups.
+</span></span><span id="273" class="l"><a href="#273">273: </a><span class="php-comment">     *
+</span></span><span id="274" class="l"><a href="#274">274: </a><span class="php-comment">     * @param callable $groupCallback Optional callback applied to each form group.
+</span></span><span id="275" class="l"><a href="#275">275: </a><span class="php-comment">     * @return FormGroupInterface[]|Generator
+</span></span><span id="276" class="l"><a href="#276">276: </a><span class="php-comment">     */</span>
+</span><span id="277" class="l"><a href="#277">277: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> groups(<span class="php-keyword1">callable</span> <span class="php-var">$groupCallback</span> = <span class="php-keyword1">null</span>)
+</span><span id="278" class="l"><a href="#278">278: </a>    {
+</span><span id="279" class="l"><a href="#279">279: </a>        <span class="php-var">$groups</span> = <span class="php-var">$this</span>-&gt;groups;
+</span><span id="280" class="l"><a href="#280">280: </a>        <span class="php-keyword2">uasort</span>(<span class="php-var">$groups</span>, [<span class="php-var">$this</span>, <span class="php-quote">'sortGroupsByPriority'</span>]);
+</span><span id="281" class="l"><a href="#281">281: </a>
+</span><span id="282" class="l"><a href="#282">282: </a>        <span class="php-var">$groupCallback</span> = (<span class="php-keyword1">isset</span>(<span class="php-var">$groupCallback</span>) ? <span class="php-var">$groupCallback</span> : <span class="php-var">$this</span>-&gt;groupCallback);
+</span><span id="283" class="l"><a href="#283">283: </a>
+</span><span id="284" class="l"><a href="#284">284: </a>        <span class="php-var">$i</span> = <span class="php-num">1</span>;
+</span><span id="285" class="l"><a href="#285">285: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$groups</span> <span class="php-keyword1">as</span> <span class="php-var">$group</span>) {
+</span><span id="286" class="l"><a href="#286">286: </a>            <span class="php-keyword1">if</span> (!<span class="php-var">$group</span>-&gt;active()) {
+</span><span id="287" class="l"><a href="#287">287: </a>                <span class="php-keyword1">continue</span>;
+</span><span id="288" class="l"><a href="#288">288: </a>            }
+</span><span id="289" class="l"><a href="#289">289: </a>
+</span><span id="290" class="l"><a href="#290">290: </a>            <span class="php-comment">// Test formGroup vs. ACL roles</span>
+</span><span id="291" class="l"><a href="#291">291: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$group</span>-&gt;isAuthorized() === <span class="php-keyword1">false</span>) {
 </span><span id="292" class="l"><a href="#292">292: </a>                <span class="php-keyword1">continue</span>;
 </span><span id="293" class="l"><a href="#293">293: </a>            }
 </span><span id="294" class="l"><a href="#294">294: </a>
