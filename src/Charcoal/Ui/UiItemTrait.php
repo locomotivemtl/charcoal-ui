@@ -551,6 +551,19 @@ trait UiItemTrait
     }
 
     /**
+     * Static comparison function used by {@see uasort()}.
+     *
+     * @param  mixed $a Widget A.
+     * @param  mixed $b Widget B.
+     * @return integer Sorting value: -1 or 1
+     */
+    protected static function sortItemsByPriority(UiItemInterface $a, UiItemInterface $b)
+    {
+        return ($a->priority() < $b->priority()) ? (-1) : 1;
+    }
+}
+
+    /**
      * All UI objects are translatable, therefore are `translator`-aware.
      *
      * @return \Charcoal\Translator\Translator
