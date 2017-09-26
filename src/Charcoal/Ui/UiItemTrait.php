@@ -20,7 +20,7 @@ trait UiItemTrait
      *
      * @var integer
      */
-    private $priority;
+    private $priority = 0;
 
     /**
      * The UI item type.
@@ -220,8 +220,8 @@ trait UiItemTrait
     /**
      * Set the group's priority or sorting index.
      *
-     * @param  integer $priority An index, for sorting.
-     * @throws InvalidArgumentException If the priority is not an integer.
+     * @param  integer|mixed $priority An index, for sorting.
+     * @throws InvalidArgumentException If the priority is not an integer / numeric.
      * @return self
      */
     public function setPriority($priority)

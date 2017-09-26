@@ -39,6 +39,7 @@ class AbstractUiItemTest extends \PHPUnit_Framework_TestCase
     public function testDefaults()
     {
         $this->assertTrue($this->obj->active());
+        $this->assertEquals(0, $this->obj->priority());
         //$this->assertEquals(AbstractUiItem::class, $this->obj->template());
         //$this->assertEquals(AbstractUiItem::class, $this->obj->type());
         $this->assertNull($this->obj->icon());
@@ -47,6 +48,7 @@ class AbstractUiItemTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $this->obj->description());
         $this->assertEquals('', $this->obj->notes());
     }
+
 
     public function testSetType()
     {
@@ -60,6 +62,13 @@ class AbstractUiItemTest extends \PHPUnit_Framework_TestCase
         $ret = $this->obj->setActive(false);
         $this->assertSame($ret, $this->obj);
         $this->assertEquals(false, $this->obj->active());
+    }
+
+    public function testSetPriority()
+    {
+        $ret = $this->obj->setPriority(42);
+        $this->assertSame($ret, $this->obj);
+        $this->assertEquals(42, $this->obj->priority());
     }
 
     public function testSetTemplate()
