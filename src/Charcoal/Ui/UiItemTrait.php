@@ -561,12 +561,12 @@ trait UiItemTrait
      */
     protected static function sortItemsByPriority(UiItemInterface $a, UiItemInterface $b)
     {
-	$priorityA = $a->priority();
-	$priorityB = $b->priority();
+        $priorityA = $a->priority();
+        $priorityB = $b->priority();
 
-	if ($priorityA === $priorityB) {
-		return 0;
-	}	
+        if ($priorityA === $priorityB) {
+            return 0;
+        }
         return ($priorityA < $priorityB) ? (-1) : 1;
     }
 
