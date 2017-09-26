@@ -4,6 +4,8 @@ namespace Charcoal\Ui;
 
 use InvalidArgumentException;
 
+use Charcoal\Ui\UiItemInterface;
+
 /**
  * Provides an implementation of {@see \Charcoal\Ui\UiItemInterface}.
  */
@@ -553,15 +555,20 @@ trait UiItemTrait
     /**
      * Static comparison function used by {@see uasort()}.
      *
-     * @param  mixed $a Widget A.
-     * @param  mixed $b Widget B.
+     * @param  UiItemInterface $a Widget A.
+     * @param  UiItemInterface $b Widget B.
      * @return integer Sorting value: -1 or 1
      */
     protected static function sortItemsByPriority(UiItemInterface $a, UiItemInterface $b)
     {
-        return ($a->priority() < $b->priority()) ? (-1) : 1;
+	$priorityA = $a->priority();
+	$priorityB = $b->priority();
+
+	if ($priorityA === $priorityB) {
+		return 0;
+	}	
+        return ($priorityA < $priorityB) ? (-1) : 1;
     }
-}
 
     /**
      * All UI objects are translatable, therefore are `translator`-aware.

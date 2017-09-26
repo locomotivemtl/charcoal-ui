@@ -124,7 +124,7 @@ abstract class AbstractMenu extends AbstractUiItem implements
     public function items(callable $itemCallback = null)
     {
         $items = $this->items;
-        uasort($items, ['self', 'sortItemsByPriority']);
+        uasort($items, [$this, 'sortItemsByPriority']);
 
         $itemCallback = isset($itemCallback) ? $itemCallback : $this->itemCallback;
         foreach ($items as $item) {
@@ -152,5 +152,4 @@ abstract class AbstractMenu extends AbstractUiItem implements
     {
         return count($this->items);
     }
-
 }
