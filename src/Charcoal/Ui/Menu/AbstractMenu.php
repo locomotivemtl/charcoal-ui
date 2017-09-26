@@ -76,31 +76,42 @@ abstract class AbstractMenu extends AbstractUiItem implements
     public function setItems(array $items)
     {
         $this->items = [];
-        foreach ($items as $item) {
-            $this->addItem($item);
+        foreach ($items as $ident => $item) {
+            $this->addItem($item, $ident);
         }
         return $this;
     }
 
     /**
-     * @param array|MenuItemInterface $item A menu item structure or object.
+     * @param array|MenuItemInterface $item  A menu item structure or object.
+     * @param string                  $ident The menu item identifier, if any.
      * @throws InvalidArgumentException If the item argument is not a structure or object.
      * @return MenuItem Chainable
      */
-    public function addItem($item)
+    public function addItem($item, $ident = null)
     {
         if (is_array($item)) {
             $item['menu'] = $this;
+            if (!isset($item['ident'])) {
+                $item['ident'] = $ident;
+            }
             $i = $this->menuItemBuilder->build($item);
             $item = $i;
         } elseif ($item instanceof MenuItemInterface) {
+            if ($item->ident() === null) {
+                $item->setIdent($ident);
+            }
             $item->setMenu($this);
         } else {
             throw new InvalidArgumentException(
                 'Item must be an array of menu item options or a MenuItem object'
             );
         }
-        $this->items[] = $item;
+        if ($ident === null) {
+            $this->items[] = $item;
+        } else {
+            $this->items[$ident] = $item;
+        }
         return $this;
     }
 

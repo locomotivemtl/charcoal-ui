@@ -205,9 +205,6 @@ trait DashboardTrait
      */
     protected static function sortWidgetsByPriority($a, $b)
     {
-        $a = $a->priority();
-        $b = $b->priority();
-
-        return ($a < $b) ? (-1) : 1;
+        return ($a->priority() < $b->priority()) ? (-1) : 1;
     }
 }

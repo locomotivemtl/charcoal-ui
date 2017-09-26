@@ -2,15 +2,15 @@
 
 namespace Charcoal\Ui\Form;
 
-use \Exception;
-use \InvalidArgumentException;
+use Exception;
+use InvalidArgumentException;
 
 // From 'charcoal-factory'
-use \Charcoal\Factory\FactoryInterface;
+use Charcoal\Factory\FactoryInterface;
 
 // From 'charcoal-ui'
-use \Charcoal\Ui\Form\FormInterface;
-use \Charcoal\Ui\FormGroup\FormGroupInterface;
+use Charcoal\Ui\Form\FormInterface;
+use Charcoal\Ui\FormGroup\FormGroupInterface;
 
 /**
  * Provides an implementation of {@see FormInterface}.
