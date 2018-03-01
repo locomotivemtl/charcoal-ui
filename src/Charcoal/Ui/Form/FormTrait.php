@@ -380,16 +380,15 @@ trait FormTrait
                 $groupCallback($group);
             }
 
-            $GLOBALS['widget_template'] = $group->template();
-
             if ($this->isTabbable() && $i > 1) {
                 $group->isHidden = true;
             }
+
             $i++;
 
-            yield $group;
+            $this->view()->templateRegistry()->once('formGroupWidget', $group->template());
 
-            $GLOBALS['widget_template'] = '';
+            yield $group;
         }
     }
 

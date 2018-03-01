@@ -181,11 +181,9 @@ trait DashboardTrait
                 $widgetCallback($widget);
             }
 
-            $GLOBALS['widget_template'] = $widget->template();
+            $this->view()->templateRegistry()->once('dashboardWidget', $widget->template());
 
             yield $widget;
-
-            $GLOBALS['widget_template'] = '';
         }
     }
 
@@ -208,4 +206,11 @@ trait DashboardTrait
     {
         return count($this->widgets);
     }
+
+    /**
+     * Retrieve the renderable view.
+     *
+     * @return ViewInterface The object's View instance.
+     */
+    abstract public function view();
 }

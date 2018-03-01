@@ -15,6 +15,9 @@ use Charcoal\Ui\ServiceProvider\FormServiceProvider;
 use Charcoal\Ui\ServiceProvider\LayoutServiceProvider;
 use Charcoal\Ui\ServiceProvider\MenuServiceProvider;
 
+// From 'charcoal-view'
+use Charcoal\View\DynamicTemplateRegistry;
+
 /**
  *
  */
@@ -31,5 +34,24 @@ class UiServiceProvider implements ServiceProviderInterface
         $container->register(new FormServiceProvider());
         $container->register(new LayoutServiceProvider());
         $container->register(new MenuServiceProvider());
+
+        $this->registerViewExtensions($container);
+    }
+
+    /**
+     * Registers view service modifications.
+     *
+     * @param  Container $container The Pimple DI container.
+     * @return void
+     */
+    protected function registerViewExtensions(Container $container)
+    {
+        /**
+         * @param  Container $container A container instance.
+         * @return DynamicTemplateRegistry
+         */
+        $container['view/loader/template-registry'] = function (Container $container) {
+            return new DynamicTemplateRegistry();
+        };
     }
 }

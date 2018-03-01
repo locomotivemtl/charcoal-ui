@@ -208,9 +208,10 @@ trait FormGroupTrait
             if ($inputCallback) {
                 $inputCallback($input);
             }
-            $GLOBALS['widget_template'] = $input->template();
+
+            $this->view()->templateRegistry()->once('formInput', $input->template());
+
             yield $input->ident() => $input;
-            $GLOBALS['widget_template'] = '';
         }
     }
 
