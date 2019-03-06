@@ -29,7 +29,7 @@
         "locomotivemtl/charcoal-factory": "~0.4",
         "locomotivemtl/charcoal-translator": "~0.2",
         "locomotivemtl/charcoal-view": "~0.2",
-        "locomotivemtl/charcoal-user": "~0.2"
+        "locomotivemtl/charcoal-user": "dev-acl-manager-refactor"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7 || ^6.5",

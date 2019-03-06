@@ -7,7 +7,7 @@ use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 // From 'charcoal-user'
-use Charcoal\User\ServiceProvider\AuthServiceProvider;
+use Charcoal\User\ServiceProvider\UserServiceProvider;
 
 // From 'charcoal-ui'
 use Charcoal\Ui\ServiceProvider\DashboardServiceProvider;
@@ -26,7 +26,7 @@ class UiServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $container->register(new AuthServiceProvider());
+        $container->register(new UserServiceProvider());
         $container->register(new DashboardServiceProvider());
         $container->register(new FormServiceProvider());
         $container->register(new LayoutServiceProvider());
