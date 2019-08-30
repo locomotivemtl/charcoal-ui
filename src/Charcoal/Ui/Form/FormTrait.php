@@ -416,7 +416,7 @@ trait FormTrait
                 $groupCallback($group);
             }
 
-            $GLOBALS['widget_template'] = $group->template();
+            $this->setDynamicTemplate('widget_template', $group->template());
 
             if (!$this->selectedFormGroup() && $this->isTabbable()) {
                 $group->setIsHidden(false);
@@ -427,8 +427,6 @@ trait FormTrait
             $i++;
 
             yield $group;
-
-            $GLOBALS['widget_template'] = '';
         }
     }
 
@@ -466,6 +464,39 @@ trait FormTrait
                 if ($group->ident() === $this->tabIdent()) {
                     $group->setIsHidden(false);
                     $this->setSelectedFormGroup($group->ident());
+                }
+            }
+
+            if ($group->rawConditionalLogic()) {
+                if (is_callable([$this, 'obj'])) {
+                    foreach ($group->rawConditionalLogic() as $logic) {
+                        $valid = true;
+                        $value = $this->obj()->get($logic['property']);
+
+                        switch ($logic['operator']) {
+                            case '!==':
+                            case '!=':
+                            case '!':
+                            case 'not':
+                                if ($value == $logic['value']) {
+                                    $valid = false;
+                                }
+                                break;
+                            default:
+                            case '"==="':
+                            case '"=="':
+                            case '"="':
+                            case '"is"':
+                                if ($value != $logic['value']) {
+                                    $valid = false;
+                                }
+                                break;
+                        }
+
+                        if (!$valid) {
+                            $group->setConditionalLogicUnmet(true);
+                        }
+                    }
                 }
             }
 
