@@ -28,11 +28,14 @@ abstract class AbstractDashboard extends AbstractUiItem implements
      */
     public function __construct($data = null)
     {
+        parent::__construct($data);
+
         $this->setWidgetBuilder($data['widget_builder']);
 
         /** Satisfies {@see \Charcoal\Ui\Layout\LayoutAwareInterface} */
         $this->setLayoutBuilder($data['layout_builder']);
 
-        parent::__construct($data);
+        /** Satisfies {@see \Charcoal\View\ViewableInterface} */
+        $this->setView($data['view']);
     }
 }

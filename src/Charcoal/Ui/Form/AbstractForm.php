@@ -29,10 +29,15 @@ abstract class AbstractForm extends AbstractUiItem implements
      */
     public function __construct($data = null)
     {
+        parent::__construct($data);
+
         /** Satisfies {@see \Charcoal\Ui\Form\FormTrait} */
         $this->setFormGroupFactory($data['form_group_factory']);
 
         /** Satisfies {@see \Charcoal\Ui\Layout\LayoutAwareInterface} */
         $this->setLayoutBuilder($data['layout_builder']);
+
+        /** Satisfies {@see \Charcoal\View\ViewableInterface} */
+        $this->setView($data['view']);
     }
 }

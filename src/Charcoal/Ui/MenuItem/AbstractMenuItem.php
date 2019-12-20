@@ -54,10 +54,16 @@ abstract class AbstractMenuItem extends AbstractUiItem implements MenuItemInterf
      */
     public function __construct($data)
     {
-        $this->setMenu($data['menu']);
+        parent::__construct($data);
+
+        if (isset($data['menu'])) {
+            $this->setMenu($data['menu']);
+        }
+
         $this->setMenuItemBuilder($data['menu_item_builder']);
 
-        parent::__construct($data);
+        /** Satisfies {@see \Charcoal\View\ViewableInterface} */
+        $this->setView($data['view']);
     }
 
     /**
