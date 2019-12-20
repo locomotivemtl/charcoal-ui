@@ -180,7 +180,7 @@ trait DashboardTrait
             if ($widgetCallback) {
                 $widgetCallback($widget);
             }
-            $this->setDynamicTemplate('widget_template', $widget->template());
+            $this->setDynamicTemplate('widgetTemplate', $widget->template());
             yield $widget;
         }
     }

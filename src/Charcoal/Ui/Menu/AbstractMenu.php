@@ -132,7 +132,7 @@ abstract class AbstractMenu extends AbstractUiItem implements
             if ($itemCallback) {
                 $itemCallback($item);
             }
-            $this->setDynamicTemplate('widget_template', $item->template());
+            $this->setDynamicTemplate('widgetTemplate', $item->template());
             yield $item->ident() => $item;
         }
     }

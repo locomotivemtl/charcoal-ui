@@ -210,7 +210,7 @@ abstract class AbstractMenuItem extends AbstractUiItem implements MenuItemInterf
             if ($childCallback) {
                 $childCallback($child);
             }
-            $this->setDynamicTemplate('widget_template', $item->template());
+            $this->setDynamicTemplate('widgetTemplate', $item->template());
             yield $child->ident() => $child;
         }
     }

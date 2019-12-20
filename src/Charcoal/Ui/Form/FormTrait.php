@@ -416,7 +416,7 @@ trait FormTrait
                 $groupCallback($group);
             }
 
-            $this->setDynamicTemplate('widget_template', $group->template());
+            $this->setDynamicTemplate('widgetTemplate', $group->template());
 
             if (!$this->selectedFormGroup() && $this->isTabbable()) {
                 $group->setIsHidden(false);
